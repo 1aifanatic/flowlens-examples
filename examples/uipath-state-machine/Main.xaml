@@ -1,0 +1,7 @@
+<Activity xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ui="http://schemas.uipath.com/workflow/activities">
+  <StateMachine DisplayName="Process job" InitialState="{x:Reference ready}">
+    <State x:Name="ready" DisplayName="Ready"><State.Transitions><Transition DisplayName="Start" To="{x:Reference running}" /></State.Transitions></State>
+    <State x:Name="running" DisplayName="Running"><State.Transitions><Transition DisplayName="Complete" To="{x:Reference done}" /><Transition DisplayName="Retry" To="{x:Reference ready}" /></State.Transitions></State>
+    <State x:Name="done" DisplayName="Done" IsFinal="True" />
+  </StateMachine>
+</Activity>

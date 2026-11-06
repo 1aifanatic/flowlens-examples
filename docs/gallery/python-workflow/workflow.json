@@ -1,0 +1,109 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "checkout · source control flow",
+    "subtitle": "Python syntax · conservative exception matching · callees not expanded",
+    "animation": "trace"
+  },
+  "lanes": [
+    {
+      "id": "row0",
+      "label": "Steps 1–4"
+    },
+    {
+      "id": "row1",
+      "label": "Steps 5–5"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "n5",
+      "lane": "row0",
+      "col": 0,
+      "type": "backend",
+      "label": "stock < 1",
+      "tag": "condition",
+      "width": 240
+    },
+    {
+      "id": "n6",
+      "lane": "row0",
+      "col": 1,
+      "type": "backend",
+      "label": "return \"sold out\"",
+      "tag": "terminal",
+      "width": 240
+    },
+    {
+      "id": "n3",
+      "lane": "row0",
+      "col": 2,
+      "type": "backend",
+      "label": "not approved",
+      "tag": "condition",
+      "width": 240
+    },
+    {
+      "id": "n4",
+      "lane": "row0",
+      "col": 3,
+      "type": "backend",
+      "label": "return \"payment declined\"",
+      "tag": "terminal",
+      "width": 240
+    },
+    {
+      "id": "n2",
+      "lane": "row1",
+      "col": 0,
+      "type": "backend",
+      "label": "return \"order confirmed\"",
+      "tag": "terminal",
+      "width": 240
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "from": "n3",
+      "to": "n4",
+      "label": "true",
+      "role": "branch"
+    },
+    {
+      "id": "e1",
+      "from": "n3",
+      "to": "n2",
+      "label": "false",
+      "role": "branch"
+    },
+    {
+      "id": "e2",
+      "from": "n5",
+      "to": "n6",
+      "label": "true",
+      "role": "branch"
+    },
+    {
+      "id": "e3",
+      "from": "n5",
+      "to": "n3",
+      "label": "false",
+      "role": "branch"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Scope",
+      "items": [
+        "Parsed Python source; no LLM, target execution, or target imports.",
+        "Expressions are atomic. Loops show symbolic iteration; loop else runs on normal completion, not break. Iterator protocol internals are not expanded.",
+        "Except clauses are tested in order with symbolic type matches. May-raise edges are conservative, not proven feasible paths.",
+        "Try else runs only on normal try fallthrough. Handler/else exceptions propagate outward. Finally preserves separate pending exits; abrupt cleanup replaces the pending exit. Except* remains unsupported.",
+        "Function setup, nested bodies, callees, exception identity/chaining, exception-variable cleanup, and implicit exceptions outside modeled exception regions are not expanded."
+      ]
+    }
+  ]
+}

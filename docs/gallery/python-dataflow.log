@@ -1,0 +1,8 @@
+[examples repository]\docs\gallery\python-dataflow\dataflow.html
+Diagram: [examples repository]\docs\gallery\python-dataflow\dataflow.html
+Report: [examples repository]\docs\gallery\python-dataflow\report.html
+Evidence: [examples repository]\docs\gallery\python-dataflow\evidence.json
+No LLM. Zero model tokens.
+Note: Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.
+Note: Selected pricing.py:1:1 calculate_total by explicit function selector; this diagram covers one Python function.
+Note: Edges are syntactic binding reads, not observed data transfers or execution order. Calls, heap aliasing, context-manager methods and exceptions are not expanded.

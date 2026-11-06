@@ -1,0 +1,68 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Main.xaml",
+    "subtitle": "Process invoice · structural overview",
+    "visual_preset": "signal-flow",
+    "animation": "none"
+  },
+  "lanes": [
+    {
+      "id": "row0",
+      "label": "Process invoice"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "n0",
+      "lane": "row0",
+      "col": 0,
+      "type": "backend",
+      "label": "Receive invoice",
+      "sublabel": "LogMessage",
+      "width": 230
+    },
+    {
+      "id": "n1",
+      "lane": "row0",
+      "col": 1,
+      "type": "backend",
+      "label": "Validate invoice",
+      "sublabel": "InvokeWorkflowFile",
+      "width": 230
+    },
+    {
+      "id": "n2",
+      "lane": "row0",
+      "col": 2,
+      "type": "backend",
+      "label": "Record result",
+      "sublabel": "LogMessage",
+      "width": 230
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "from": "n0",
+      "to": "n1"
+    },
+    {
+      "id": "e1",
+      "from": "n1",
+      "to": "n2"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Reading this workflow",
+      "items": [
+        "Open report.html for the complete expandable activity tree and full names.",
+        "Containers stay grouped. Only sequence order and resolved state/flow transitions are connected.",
+        "Expressions, custom activity internals, switch cases and implicit exception paths are not evaluated."
+      ]
+    }
+  ]
+}

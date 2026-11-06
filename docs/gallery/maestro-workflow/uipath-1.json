@@ -1,0 +1,55 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Review.flow#subflows/notify",
+    "subtitle": "Declared Maestro connections · no execution",
+    "visual_preset": "signal-flow",
+    "animation": "none"
+  },
+  "lanes": [
+    {
+      "id": "row0",
+      "label": "Maestro flow"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "n0",
+      "lane": "row0",
+      "col": 0,
+      "width": 230,
+      "type": "backend",
+      "label": "Prepare message",
+      "sublabel": "action.script"
+    },
+    {
+      "id": "n1",
+      "lane": "row0",
+      "col": 1,
+      "width": 230,
+      "type": "backend",
+      "label": "Send notification",
+      "sublabel": "action.script"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "from": "n0",
+      "to": "n1",
+      "label": "output"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Flow scope",
+      "items": [
+        "Overview: 2 of 2 nodes. All nodes and 1 connections remain in report.html.",
+        "Edges retain source-port labels. Scripts, expressions, remote resources and connectors are not executed or resolved.",
+        "Embedded subflows have separate views. JSON evidence is file-level (line 1)."
+      ]
+    }
+  ]
+}

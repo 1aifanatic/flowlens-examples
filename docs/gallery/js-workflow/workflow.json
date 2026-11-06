@@ -1,0 +1,70 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "submitOrder · source control flow",
+    "subtitle": "Static syntax · conservative catch paths · callees not expanded",
+    "animation": "trace"
+  },
+  "lanes": [
+    {
+      "id": "row0",
+      "label": "Steps 1–3"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "n3",
+      "lane": "row0",
+      "col": 0,
+      "type": "backend",
+      "label": "quantity < 1",
+      "tag": "condition",
+      "width": 240
+    },
+    {
+      "id": "n4",
+      "lane": "row0",
+      "col": 1,
+      "type": "backend",
+      "label": "return \"empty order\";",
+      "tag": "terminal",
+      "width": 240
+    },
+    {
+      "id": "n2",
+      "lane": "row0",
+      "col": 2,
+      "type": "backend",
+      "label": "return receipt(quantity);",
+      "tag": "terminal",
+      "width": 240
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "from": "n3",
+      "to": "n4",
+      "label": "true",
+      "role": "branch"
+    },
+    {
+      "id": "e1",
+      "from": "n3",
+      "to": "n2",
+      "label": "false",
+      "role": "branch"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Scope",
+      "items": [
+        "Parsed source; no model request and no source execution.",
+        "Conservative may-throw edges to enclosing catch handlers; uncaught implicit exceptions and callee internals are not expanded."
+      ]
+    }
+  ]
+}

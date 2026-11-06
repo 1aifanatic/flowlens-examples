@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "maestro-review · source map",
+    "subtitle": "Local static analysis · source groups and candidate imports, not runtime topology",
+    "visual_preset": "signal-flow",
+    "legend": {
+      "mode": "hidden"
+    },
+    "viewBox": [
+      710,
+      330
+    ]
+  },
+  "components": [
+    {
+      "id": "module1",
+      "type": "backend",
+      "label": "README.md",
+      "sublabel": "1 file",
+      "pos": [
+        150,
+        100
+      ],
+      "size": [
+        210,
+        76
+      ]
+    },
+    {
+      "id": "module2",
+      "type": "backend",
+      "label": "Review.flow",
+      "sublabel": "1 file",
+      "pos": [
+        430,
+        100
+      ],
+      "size": [
+        210,
+        76
+      ]
+    }
+  ],
+  "connections": [],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Detected locally",
+      "items": [
+        "2 files · 2 source groups · 0 npm manifests",
+        "No source code executed. No model or network required."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Interpretation limits",
+      "items": [
+        "Groups reflect source files/directories, not verified services.",
+        "JS/TS imports use syntax parsing; Python, embedded scripts and unsupported syntax use lexical candidates.",
+        "Imports do not prove execution. Computed imports and external package resolution may be unresolved."
+      ]
+    }
+  ]
+}

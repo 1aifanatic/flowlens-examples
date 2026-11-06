@@ -1,0 +1,89 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Review request",
+    "subtitle": "Declared Maestro connections · no execution",
+    "visual_preset": "signal-flow",
+    "animation": "none"
+  },
+  "lanes": [
+    {
+      "id": "row0",
+      "label": "Maestro flow"
+    },
+    {
+      "id": "row1",
+      "label": "Continued"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "n0",
+      "lane": "row0",
+      "col": 0,
+      "width": 230,
+      "type": "frontend",
+      "label": "Receive request",
+      "sublabel": "trigger.manual"
+    },
+    {
+      "id": "n1",
+      "lane": "row0",
+      "col": 1,
+      "width": 230,
+      "type": "backend",
+      "label": "Review request",
+      "sublabel": "action.script"
+    },
+    {
+      "id": "n2",
+      "lane": "row0",
+      "col": 2,
+      "width": 230,
+      "type": "backend",
+      "label": "Approved",
+      "sublabel": "action.script"
+    },
+    {
+      "id": "n3",
+      "lane": "row1",
+      "col": 0,
+      "width": 230,
+      "type": "backend",
+      "label": "Rejected",
+      "sublabel": "action.script"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "from": "n0",
+      "to": "n1",
+      "label": "output"
+    },
+    {
+      "id": "e1",
+      "from": "n1",
+      "to": "n2",
+      "label": "approved"
+    },
+    {
+      "id": "e2",
+      "from": "n1",
+      "to": "n3",
+      "label": "rejected"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Flow scope",
+      "items": [
+        "Overview: 4 of 4 nodes. All nodes and 3 connections remain in report.html.",
+        "Edges retain source-port labels. Scripts, expressions, remote resources and connectors are not executed or resolved.",
+        "Embedded subflows have separate views. JSON evidence is file-level (line 1)."
+      ]
+    }
+  ]
+}

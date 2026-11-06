@@ -1,0 +1,317 @@
+{
+  "title": "maestro-review — UiPath",
+  "summary": "2 parsed workflow views (XAML and Maestro flows/subflows); 0 resolved XAML workflow invocations. Compatibility: unspecified. Expressions: unspecified.",
+  "diagram": {
+    "schema_version": 2,
+    "diagram_type": "workflow",
+    "meta": {
+      "title": "Review.flow#subflows/notify",
+      "subtitle": "Declared Maestro connections · no execution",
+      "visual_preset": "signal-flow",
+      "animation": "none"
+    },
+    "lanes": [
+      {
+        "id": "row0",
+        "label": "Maestro flow"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "n0",
+        "lane": "row0",
+        "col": 0,
+        "width": 230,
+        "type": "backend",
+        "label": "Prepare message",
+        "sublabel": "action.script"
+      },
+      {
+        "id": "n1",
+        "lane": "row0",
+        "col": 1,
+        "width": 230,
+        "type": "backend",
+        "label": "Send notification",
+        "sublabel": "action.script"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e0",
+        "from": "n0",
+        "to": "n1",
+        "label": "output"
+      }
+    ],
+    "cards": [
+      {
+        "dot": "cyan",
+        "title": "Flow scope",
+        "items": [
+          "Overview: 2 of 2 nodes. All nodes and 1 connections remain in report.html.",
+          "Edges retain source-port labels. Scripts, expressions, remote resources and connectors are not executed or resolved.",
+          "Embedded subflows have separate views. JSON evidence is file-level (line 1)."
+        ]
+      }
+    ]
+  },
+  "facts": [
+    {
+      "file": "Review.flow",
+      "line": 1,
+      "quote": "{",
+      "description": "Review.flow: 2 declared flow/subflow views"
+    }
+  ],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.",
+    "Static workflow structure only: expressions are not evaluated; custom activity internals, runtime bindings, XAML switch-case edges and implicit exception paths are not inferred. Maestro edges retain their declared ports."
+  ],
+  "workflows": [
+    {
+      "file": "Review.flow",
+      "connections": [
+        {
+          "from": "start",
+          "to": "review",
+          "label": "output",
+          "targetPort": "input"
+        },
+        {
+          "from": "review",
+          "to": "approve",
+          "label": "approved",
+          "targetPort": "input"
+        },
+        {
+          "from": "review",
+          "to": "reject",
+          "label": "rejected",
+          "targetPort": "input"
+        }
+      ],
+      "outline": {
+        "name": "Review request",
+        "type": "Maestro flow",
+        "role": "",
+        "line": 1,
+        "children": [
+          {
+            "name": "Receive request",
+            "type": "core.trigger.manual",
+            "role": "start",
+            "line": 1,
+            "children": []
+          },
+          {
+            "name": "Review request",
+            "type": "core.action.script",
+            "role": "review",
+            "line": 1,
+            "children": []
+          },
+          {
+            "name": "Approved",
+            "type": "core.action.script",
+            "role": "approve",
+            "line": 1,
+            "children": []
+          },
+          {
+            "name": "Rejected",
+            "type": "core.action.script",
+            "role": "reject",
+            "line": 1,
+            "children": []
+          }
+        ]
+      },
+      "diagram": {
+        "schema_version": 2,
+        "diagram_type": "workflow",
+        "meta": {
+          "title": "Review request",
+          "subtitle": "Declared Maestro connections · no execution",
+          "visual_preset": "signal-flow",
+          "animation": "none"
+        },
+        "lanes": [
+          {
+            "id": "row0",
+            "label": "Maestro flow"
+          },
+          {
+            "id": "row1",
+            "label": "Continued"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "n0",
+            "lane": "row0",
+            "col": 0,
+            "width": 230,
+            "type": "frontend",
+            "label": "Receive request",
+            "sublabel": "trigger.manual"
+          },
+          {
+            "id": "n1",
+            "lane": "row0",
+            "col": 1,
+            "width": 230,
+            "type": "backend",
+            "label": "Review request",
+            "sublabel": "action.script"
+          },
+          {
+            "id": "n2",
+            "lane": "row0",
+            "col": 2,
+            "width": 230,
+            "type": "backend",
+            "label": "Approved",
+            "sublabel": "action.script"
+          },
+          {
+            "id": "n3",
+            "lane": "row1",
+            "col": 0,
+            "width": 230,
+            "type": "backend",
+            "label": "Rejected",
+            "sublabel": "action.script"
+          }
+        ],
+        "edges": [
+          {
+            "id": "e0",
+            "from": "n0",
+            "to": "n1",
+            "label": "output"
+          },
+          {
+            "id": "e1",
+            "from": "n1",
+            "to": "n2",
+            "label": "approved"
+          },
+          {
+            "id": "e2",
+            "from": "n1",
+            "to": "n3",
+            "label": "rejected"
+          }
+        ],
+        "cards": [
+          {
+            "dot": "cyan",
+            "title": "Flow scope",
+            "items": [
+              "Overview: 4 of 4 nodes. All nodes and 3 connections remain in report.html.",
+              "Edges retain source-port labels. Scripts, expressions, remote resources and connectors are not executed or resolved.",
+              "Embedded subflows have separate views. JSON evidence is file-level (line 1)."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "file": "Review.flow#subflows/notify",
+      "connections": [
+        {
+          "from": "prepare",
+          "to": "send",
+          "label": "output",
+          "targetPort": "input"
+        }
+      ],
+      "outline": {
+        "name": "Review.flow#subflows/notify",
+        "type": "Maestro flow",
+        "role": "",
+        "line": 1,
+        "children": [
+          {
+            "name": "Prepare message",
+            "type": "core.action.script",
+            "role": "prepare",
+            "line": 1,
+            "children": []
+          },
+          {
+            "name": "Send notification",
+            "type": "core.action.script",
+            "role": "send",
+            "line": 1,
+            "children": []
+          }
+        ]
+      },
+      "diagram": {
+        "schema_version": 2,
+        "diagram_type": "workflow",
+        "meta": {
+          "title": "Review.flow#subflows/notify",
+          "subtitle": "Declared Maestro connections · no execution",
+          "visual_preset": "signal-flow",
+          "animation": "none"
+        },
+        "lanes": [
+          {
+            "id": "row0",
+            "label": "Maestro flow"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "n0",
+            "lane": "row0",
+            "col": 0,
+            "width": 230,
+            "type": "backend",
+            "label": "Prepare message",
+            "sublabel": "action.script"
+          },
+          {
+            "id": "n1",
+            "lane": "row0",
+            "col": 1,
+            "width": 230,
+            "type": "backend",
+            "label": "Send notification",
+            "sublabel": "action.script"
+          }
+        ],
+        "edges": [
+          {
+            "id": "e0",
+            "from": "n0",
+            "to": "n1",
+            "label": "output"
+          }
+        ],
+        "cards": [
+          {
+            "dot": "cyan",
+            "title": "Flow scope",
+            "items": [
+              "Overview: 2 of 2 nodes. All nodes and 1 connections remain in report.html.",
+              "Edges retain source-port labels. Scripts, expressions, remote resources and connectors are not executed or resolved.",
+              "Embedded subflows have separate views. JSON evidence is file-level (line 1)."
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "calls": [],
+  "projects": [],
+  "project": {},
+  "mode": "static",
+  "diagramType": "workflow",
+  "question": "",
+  "modelTokens": 0,
+  "scope": "Local XAML/XML and Maestro JSON parsing only. No LLM, source execution or runtime trace."
+}

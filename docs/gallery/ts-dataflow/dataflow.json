@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "calculateTotal · variable dependencies",
+    "subtitle": "Static binding references · calls and heap effects are opaque",
+    "animation": "trace",
+    "viewBox": [
+      855,
+      414
+    ]
+  },
+  "stages": [
+    {
+      "label": "Inputs / literals"
+    },
+    {
+      "label": "Reference depth 1"
+    },
+    {
+      "label": "Reference depth 2"
+    },
+    {
+      "label": "Later references"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "v1",
+      "type": "backend",
+      "label": "price",
+      "stage": 0,
+      "row": 0,
+      "yOffset": 0,
+      "width": 152
+    },
+    {
+      "id": "v2",
+      "type": "backend",
+      "label": "quantity",
+      "stage": 0,
+      "row": 0,
+      "yOffset": 114,
+      "width": 152
+    },
+    {
+      "id": "v3",
+      "type": "backend",
+      "label": "subtotal #1",
+      "stage": 1,
+      "row": 0,
+      "yOffset": 0,
+      "width": 152
+    },
+    {
+      "id": "v4",
+      "type": "backend",
+      "label": "total #1",
+      "stage": 2,
+      "row": 0,
+      "yOffset": 0,
+      "width": 152
+    },
+    {
+      "id": "v5",
+      "type": "backend",
+      "label": "return",
+      "stage": 3,
+      "row": 0,
+      "yOffset": 0,
+      "width": 152
+    }
+  ],
+  "flows": [
+    {
+      "id": "r1",
+      "from": "v1",
+      "to": "v3",
+      "label": "reads",
+      "labelDy": -42
+    },
+    {
+      "id": "r2",
+      "from": "v2",
+      "to": "v3",
+      "label": "reads"
+    },
+    {
+      "id": "r3",
+      "from": "v3",
+      "to": "v4",
+      "label": "reads",
+      "labelDy": -42
+    },
+    {
+      "id": "r4",
+      "from": "v4",
+      "to": "v5",
+      "label": "reads",
+      "labelDy": -42
+    }
+  ]
+}

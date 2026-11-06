@@ -1,0 +1,157 @@
+{
+  "diagram": {
+    "schema_version": 1,
+    "diagram_type": "architecture",
+    "meta": {
+      "title": "other-languages · source map",
+      "subtitle": "Local static analysis · source groups and candidate imports, not runtime topology",
+      "visual_preset": "signal-flow",
+      "legend": {
+        "mode": "hidden"
+      },
+      "viewBox": [
+        1270,
+        390
+      ]
+    },
+    "components": [
+      {
+        "id": "module1",
+        "type": "backend",
+        "label": "README.md",
+        "sublabel": "1 file",
+        "pos": [
+          150,
+          100
+        ],
+        "size": [
+          210,
+          76
+        ]
+      },
+      {
+        "id": "module2",
+        "type": "backend",
+        "label": "Service.cs",
+        "sublabel": "1 file",
+        "pos": [
+          430,
+          100
+        ],
+        "size": [
+          210,
+          76
+        ]
+      },
+      {
+        "id": "module3",
+        "type": "backend",
+        "label": "main.go",
+        "sublabel": "1 file",
+        "pos": [
+          710,
+          100
+        ],
+        "size": [
+          210,
+          76
+        ]
+      },
+      {
+        "id": "module4",
+        "type": "backend",
+        "label": "schema.sql",
+        "sublabel": "1 file",
+        "pos": [
+          990,
+          100
+        ],
+        "size": [
+          210,
+          76
+        ]
+      },
+      {
+        "id": "module5",
+        "type": "backend",
+        "label": "status.hs",
+        "sublabel": "1 file",
+        "pos": [
+          150,
+          250
+        ],
+        "size": [
+          210,
+          76
+        ]
+      }
+    ],
+    "connections": [],
+    "cards": [
+      {
+        "dot": "cyan",
+        "title": "Detected locally",
+        "items": [
+          "5 files · 5 source groups · 0 npm manifests",
+          "No source code executed. No model or network required."
+        ]
+      },
+      {
+        "dot": "amber",
+        "title": "Interpretation limits",
+        "items": [
+          "Groups reflect source files/directories, not verified services.",
+          "JS/TS imports use syntax parsing; Python, embedded scripts and unsupported syntax use lexical candidates.",
+          "Imports do not prove execution. Computed imports and external package resolution may be unresolved."
+        ]
+      }
+    ]
+  },
+  "title": "Repository source map",
+  "summary": "5 scanned files, 5 source groups. Connections represent statically resolved imports. The excerpts below are selected by matching the question to source text; they are not a natural-language interpretation of the code.",
+  "facts": [
+    {
+      "file": "main.go",
+      "line": 1,
+      "quote": "package main\n\nimport \"fmt\"\n\nfunc main() { fmt.Println(\"Ready\") }\n",
+      "description": "Matching source excerpt"
+    },
+    {
+      "file": "schema.sql",
+      "line": 1,
+      "quote": "CREATE TABLE orders (id INTEGER PRIMARY KEY, status VARCHAR(30));\n",
+      "description": "Matching source excerpt"
+    },
+    {
+      "file": "Service.cs",
+      "line": 1,
+      "quote": "namespace Demo;\npublic class Service\n{\n    public string Status() => \"Ready\";\n}\n",
+      "description": "Matching source excerpt"
+    },
+    {
+      "file": "status.hs",
+      "line": 1,
+      "quote": "status = \"Ready\"\n",
+      "description": "Matching source excerpt"
+    },
+    {
+      "file": "README.md",
+      "line": 1,
+      "quote": "# other-languages\n\nSmall synthetic source fixture for FlowLens 0.10.0. No private project data.\n\nRun from the **repository root**, after `npm ci`:\n\n## Other languages: source inventory\n\n```sh\nnpm run examples -- other-source-map\n```\n\nEquivalent package command (with a global installation):\n\n```sh\nflowlens analyze examples/other-languages --diagram architecture --open\n```\n\n## Include a custom source extension\n\n```sh\nnpm run examples -- custom-extension\n```\n\nEquivalent package command (with a global installation):\n\n```sh\nflowlens analyze examples/other-languages --extension .hs --open\n```\n\nOpen the generated gallery path printed by the runner. Every run uses a new directory, so it is safe to repeat. See the [main README](../../README.md) for scope and limits.\n",
+      "description": "Matching source excerpt"
+    }
+  ],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied."
+  ],
+  "mode": "static",
+  "diagramType": "architecture",
+  "question": "",
+  "query": {
+    "intent": "search",
+    "recognized": false,
+    "reason": "No question supplied; use the default source analysis."
+  },
+  "modelTokens": 0,
+  "scope": "Source parsing and deterministic query rules only. No LLM, source execution, or inferred runtime trace. Recognized questions return supported source facts; other questions are text searches, not semantic answers."
+}

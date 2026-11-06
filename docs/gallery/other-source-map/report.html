@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Repository source map</title>
+<style>body{margin:0;background:#08111c;color:#e6eef6;font:17px/1.6 system-ui,sans-serif}main{max-width:1080px;margin:auto;padding:32px 24px;overflow-wrap:anywhere}a{color:#67e8f9}p,pre{white-space:pre-wrap;overflow-wrap:anywhere}article{border:1px solid #294056;border-radius:10px;padding:18px;margin:16px 0}small{color:#a8bbcd}summary{cursor:pointer}</style></head><body><main>
+<small>FLOWLENS · NO LLM · ZERO MODEL TOKENS</small><h1>Repository source map</h1>
+<p><small>Source search · No question supplied; use the default source analysis.</small></p><p>4 scanned files, 4 source groups. Connections represent statically resolved imports. The excerpts below are selected by matching the question to source text; they are not a natural-language interpretation of the code.</p><p><small>Source parsing and deterministic query rules only. No LLM, source execution, or inferred runtime trace. Recognized questions return supported source facts; other questions are text searches, not semantic answers.</small></p>
+<p><a href="architecture.html">Open interactive diagram</a> · <a href="analysis.json">Download source analysis</a></p>
+
+<h2>Coverage</h2><ul><li>Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.</li></ul>
+<h2>Source evidence</h2><article><p>Matching source excerpt</p><details><summary>main.go:1</summary><pre>package main
+
+import &quot;fmt&quot;
+
+func main() { fmt.Println(&quot;Ready&quot;) }
+</pre></details></article><article><p>Matching source excerpt</p><details><summary>schema.sql:1</summary><pre>CREATE TABLE orders (id INTEGER PRIMARY KEY, status VARCHAR(30));
+</pre></details></article><article><p>Matching source excerpt</p><details><summary>Service.cs:1</summary><pre>namespace Demo;
+public class Service
+{
+    public string Status() =&gt; &quot;Ready&quot;;
+}
+</pre></details></article><article><p>Matching source excerpt</p><details><summary>README.md:1</summary><pre># other-languages
+
+Small synthetic source fixture for FlowLens 0.10.0. No private project data.
+
+Run from the **repository root**, after `npm ci`:
+
+## Other languages: source inventory
+
+```sh
+npm run examples -- other-source-map
+```
+
+Equivalent package command (with a global installation):
+
+```sh
+flowlens analyze examples/other-languages --diagram architecture --open
+```
+
+## Include a custom source extension
+
+```sh
+npm run examples -- custom-extension
+```
+
+Equivalent package command (with a global installation):
+
+```sh
+flowlens analyze examples/other-languages --extension .hs --open
+```
+
+Open the generated gallery path printed by the runner. Every run uses a new directory, so it is safe to repeat. See the [main README](../../README.md) for scope and limits.
+</pre></details></article>
+</main></body></html>

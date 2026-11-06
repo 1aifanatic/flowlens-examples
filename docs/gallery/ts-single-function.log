@@ -1,0 +1,4 @@
+[examples repository]\docs\gallery\ts-single-function\workflow.html
+Source workflow: [examples repository]\docs\gallery\ts-single-function\workflow.html
+Evidence: [examples repository]\docs\gallery\ts-single-function\flow.json
+Scope: one function; conservative catch paths. Calls and uncaught implicit exceptions are not expanded. No model request or source execution.

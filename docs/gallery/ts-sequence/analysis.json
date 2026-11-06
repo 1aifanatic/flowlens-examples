@@ -1,0 +1,93 @@
+{
+  "diagram": {
+    "schema_version": 1,
+    "diagram_type": "sequence",
+    "meta": {
+      "title": "placeOrder · source call sequence",
+      "subtitle": "Static call sites · no execution or inferred returns",
+      "animation": "trace",
+      "column_fit": "spread",
+      "viewBox": [
+        864,
+        480
+      ]
+    },
+    "participants": [
+      {
+        "id": "caller",
+        "type": "backend",
+        "label": "placeOrder"
+      },
+      {
+        "id": "callee1",
+        "type": "backend",
+        "label": "authenticate"
+      },
+      {
+        "id": "callee2",
+        "type": "backend",
+        "label": "checkout"
+      }
+    ],
+    "messages": [
+      {
+        "id": "call1",
+        "from": "caller",
+        "to": "callee1",
+        "y": 180,
+        "label": "authenticate() · L4",
+        "variant": "default"
+      },
+      {
+        "id": "call2",
+        "from": "caller",
+        "to": "callee2",
+        "y": 228,
+        "label": "checkout() · L5",
+        "variant": "default"
+      }
+    ],
+    "cards": [
+      {
+        "dot": "amber",
+        "title": "Scope",
+        "items": [
+          "Resolved source call sites within one straight-line function. Earlier exceptions may prevent later calls.",
+          "Callees are not expanded. Asynchronous completion order and return values are not inferred."
+        ]
+      }
+    ]
+  },
+  "title": "placeOrder · source call sequence",
+  "summary": "placeOrder in src/service.ts:3:8: 2 resolved call sites in source evaluation order within straight-line statements. This is not an execution trace: earlier exceptions can prevent later calls, and asynchronous completion order is unknown. Calls inside callees or nested function bodies are not expanded; return messages are not invented.",
+  "facts": [
+    {
+      "file": "src/service.ts",
+      "line": 4,
+      "column": 20,
+      "quote": "authenticate(token)",
+      "description": "Invocation of import authenticate from ./auth. Completion and return value are not inferred."
+    },
+    {
+      "file": "src/service.ts",
+      "line": 5,
+      "column": 10,
+      "quote": "checkout(stock, approved)",
+      "description": "Invocation of import checkout from ./checkout. Completion and return value are not inferred."
+    }
+  ],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.",
+    "Selected src/service.ts:3:8 placeOrder by explicit function selector; this diagram covers one function."
+  ],
+  "mode": "static",
+  "diagramType": "sequence",
+  "question": "",
+  "query": {
+    "intent": "search",
+    "recognized": false,
+    "reason": "No question supplied; use the default source analysis."
+  },
+  "modelTokens": 0,
+  "scope": "Source parsing and deterministic query rules only. No LLM, source execution, or inferred runtime trace. Recognized questions return supported source facts; other questions are text searches, not semantic answers."
+}

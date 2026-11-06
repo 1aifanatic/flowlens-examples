@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "diagram_type": "lifecycle",
+  "meta": {
+    "title": "TRANSITIONS · declared lifecycle",
+    "subtitle": "Literal Python transition dictionary · no runtime inference",
+    "animation": "trace",
+    "viewBox": [
+      1122,
+      660
+    ]
+  },
+  "lanes": [
+    {
+      "id": "main",
+      "label": "No primary path inferred"
+    },
+    {
+      "id": "other",
+      "label": "Declared states"
+    },
+    {
+      "id": "terminal",
+      "label": "Explicit terminal set"
+    }
+  ],
+  "states": [
+    {
+      "id": "s1",
+      "type": "neutral",
+      "label": "queued",
+      "width": 118,
+      "lane": "other",
+      "col": 0,
+      "yOffset": 0
+    },
+    {
+      "id": "s2",
+      "type": "neutral",
+      "label": "running",
+      "width": 118,
+      "lane": "other",
+      "col": 1,
+      "yOffset": 0
+    },
+    {
+      "id": "s3",
+      "type": "neutral",
+      "label": "done",
+      "width": 118,
+      "lane": "terminal",
+      "col": 0,
+      "yOffset": 0,
+      "tag": "terminal"
+    },
+    {
+      "id": "s4",
+      "type": "neutral",
+      "label": "failed",
+      "width": 118,
+      "lane": "other",
+      "col": 2,
+      "yOffset": 0
+    }
+  ],
+  "transitions": [
+    {
+      "id": "transition1",
+      "from": "s1",
+      "to": "s2",
+      "label": "start",
+      "variant": "default",
+      "labelDy": -30
+    },
+    {
+      "id": "transition2",
+      "from": "s2",
+      "to": "s3",
+      "label": "complete",
+      "variant": "default",
+      "labelAt": [
+        479,
+        400
+      ]
+    },
+    {
+      "id": "transition3",
+      "from": "s2",
+      "to": "s4",
+      "label": "fail",
+      "variant": "default",
+      "labelDy": -30
+    },
+    {
+      "id": "transition4",
+      "from": "s4",
+      "to": "s1",
+      "label": "retry",
+      "variant": "default",
+      "fromSide": "bottom",
+      "toSide": "bottom",
+      "route": "bottom-channel"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Source scope",
+      "items": [
+        "Only literal dictionary transitions are shown.",
+        "No start state, primary path, guard or runtime execution is inferred.",
+        "Only an explicit terminal set marks terminal states."
+      ]
+    }
+  ]
+}

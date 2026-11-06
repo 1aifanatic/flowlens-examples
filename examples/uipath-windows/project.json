@@ -1,0 +1,7 @@
+{
+  "name": "uipath-windows",
+  "description": "Synthetic static-analysis fixture; not a deployable UiPath automation.",
+  "main": "Main.xaml",
+  "targetFramework": "Windows",
+  "expressionLanguage": "VisualBasic"
+}

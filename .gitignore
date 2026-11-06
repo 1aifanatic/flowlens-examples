@@ -1,0 +1,5 @@
+node_modules/
+.archify/
+.env*
+__pycache__/
+.venv/

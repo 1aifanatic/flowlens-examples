@@ -1,0 +1,113 @@
+{
+  "name": "checkout",
+  "entry": "n6",
+  "mode": "static-syntax",
+  "exceptionModel": "Conservative may-throw edges to enclosing catch handlers; uncaught implicit exceptions and callee internals are not expanded.",
+  "nodes": [
+    {
+      "id": "n2",
+      "label": "return \"order confirmed\";",
+      "kind": "return",
+      "terminal": true,
+      "source": {
+        "file": "checkout.ts",
+        "line": 5,
+        "column": 3,
+        "endLine": 5,
+        "quote": "return \"order confirmed\";"
+      }
+    },
+    {
+      "id": "n3",
+      "label": "stock--;",
+      "kind": "action",
+      "terminal": false,
+      "source": {
+        "file": "checkout.ts",
+        "line": 4,
+        "column": 3,
+        "endLine": 4,
+        "quote": "stock--;"
+      }
+    },
+    {
+      "id": "n4",
+      "label": "!approved",
+      "kind": "condition",
+      "terminal": false,
+      "source": {
+        "file": "checkout.ts",
+        "line": 3,
+        "column": 7,
+        "endLine": 3,
+        "quote": "!approved"
+      }
+    },
+    {
+      "id": "n5",
+      "label": "return \"payment declined\";",
+      "kind": "return",
+      "terminal": true,
+      "source": {
+        "file": "checkout.ts",
+        "line": 3,
+        "column": 18,
+        "endLine": 3,
+        "quote": "return \"payment declined\";"
+      }
+    },
+    {
+      "id": "n6",
+      "label": "stock < 1",
+      "kind": "condition",
+      "terminal": false,
+      "source": {
+        "file": "checkout.ts",
+        "line": 2,
+        "column": 7,
+        "endLine": 2,
+        "quote": "stock < 1"
+      }
+    },
+    {
+      "id": "n7",
+      "label": "return \"sold out\";",
+      "kind": "return",
+      "terminal": true,
+      "source": {
+        "file": "checkout.ts",
+        "line": 2,
+        "column": 18,
+        "endLine": 2,
+        "quote": "return \"sold out\";"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "n3",
+      "to": "n2",
+      "label": "next"
+    },
+    {
+      "from": "n4",
+      "to": "n5",
+      "label": "true"
+    },
+    {
+      "from": "n4",
+      "to": "n3",
+      "label": "false"
+    },
+    {
+      "from": "n6",
+      "to": "n7",
+      "label": "true"
+    },
+    {
+      "from": "n6",
+      "to": "n4",
+      "label": "false"
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "diagram": {
+    "schema_version": 1,
+    "diagram_type": "lifecycle",
+    "meta": {
+      "title": "transitions · declared lifecycle",
+      "subtitle": "Literal state:event table · no runtime inference",
+      "animation": "trace",
+      "viewBox": [
+        1122,
+        660
+      ]
+    },
+    "lanes": [
+      {
+        "id": "main",
+        "label": "No primary path inferred"
+      },
+      {
+        "id": "other",
+        "label": "Declared states"
+      },
+      {
+        "id": "terminal",
+        "label": "Explicit terminal Set"
+      }
+    ],
+    "states": [
+      {
+        "id": "s1",
+        "type": "neutral",
+        "label": "queued",
+        "width": 118,
+        "lane": "other",
+        "col": 0,
+        "yOffset": 0
+      },
+      {
+        "id": "s2",
+        "type": "neutral",
+        "label": "running",
+        "width": 118,
+        "lane": "other",
+        "col": 1,
+        "yOffset": 0
+      },
+      {
+        "id": "s3",
+        "type": "neutral",
+        "label": "done",
+        "width": 118,
+        "lane": "terminal",
+        "col": 0,
+        "yOffset": 0,
+        "tag": "terminal"
+      },
+      {
+        "id": "s4",
+        "type": "neutral",
+        "label": "failed",
+        "width": 118,
+        "lane": "other",
+        "col": 2,
+        "yOffset": 0
+      }
+    ],
+    "transitions": [
+      {
+        "id": "transition1",
+        "from": "s1",
+        "to": "s2",
+        "label": "start",
+        "variant": "default",
+        "labelDy": -30
+      },
+      {
+        "id": "transition2",
+        "from": "s2",
+        "to": "s3",
+        "label": "complete",
+        "variant": "default",
+        "labelAt": [
+          479,
+          400
+        ]
+      },
+      {
+        "id": "transition3",
+        "from": "s2",
+        "to": "s4",
+        "label": "fail",
+        "variant": "default",
+        "labelDy": -30
+      },
+      {
+        "id": "transition4",
+        "from": "s4",
+        "to": "s1",
+        "label": "retry",
+        "variant": "default",
+        "fromSide": "bottom",
+        "toSide": "bottom",
+        "route": "bottom-channel"
+      }
+    ],
+    "cards": [
+      {
+        "dot": "cyan",
+        "title": "Source scope",
+        "items": [
+          "Only literal state:event declarations are shown.",
+          "No start state, primary path, guard or runtime execution is inferred.",
+          "Only an explicit terminal Set marks terminal states."
+        ]
+      }
+    ]
+  },
+  "title": "transitions · declared lifecycle",
+  "summary": "4 literal states and 4 declared transitions from src/job.ts. 1 explicitly declared terminal states. Source code was parsed without execution or a model request.",
+  "facts": [
+    {
+      "file": "src/job.ts",
+      "line": 2,
+      "quote": "\"queued:start\": \"running\"",
+      "description": "queued + start → running"
+    },
+    {
+      "file": "src/job.ts",
+      "line": 3,
+      "quote": "\"running:complete\": \"done\"",
+      "description": "running + complete → done"
+    },
+    {
+      "file": "src/job.ts",
+      "line": 4,
+      "quote": "\"running:fail\": \"failed\"",
+      "description": "running + fail → failed"
+    },
+    {
+      "file": "src/job.ts",
+      "line": 5,
+      "quote": "\"failed:retry\": \"queued\"",
+      "description": "failed + retry → queued"
+    },
+    {
+      "file": "src/job.ts",
+      "line": 7,
+      "quote": "terminal = new Set([\"done\"])",
+      "description": "Declared terminal states: done"
+    }
+  ],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.",
+    "Exported lifecycle objects may be mutated by other modules. Only declarations and direct uses in the selected source are checked; external mutations are not modeled."
+  ],
+  "mode": "static",
+  "diagramType": "lifecycle",
+  "question": "",
+  "query": {
+    "intent": "search",
+    "recognized": false,
+    "reason": "No question supplied; use the default source analysis."
+  },
+  "modelTokens": 0,
+  "scope": "Source parsing and deterministic query rules only. No LLM, source execution, or inferred runtime trace. Recognized questions return supported source facts; other questions are text searches, not semantic answers."
+}

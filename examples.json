@@ -1,0 +1,339 @@
+[
+  {
+    "id": "ts-architecture",
+    "title": "TypeScript architecture",
+    "source": "typescript-shop",
+    "args": [
+      "analyze",
+      "examples/typescript-shop",
+      "--diagram",
+      "architecture"
+    ],
+    "diagram": "architecture"
+  },
+  {
+    "id": "ts-workflow",
+    "title": "TypeScript workflow",
+    "source": "typescript-shop",
+    "args": [
+      "analyze",
+      "examples/typescript-shop",
+      "--diagram",
+      "workflow",
+      "--function",
+      "checkout"
+    ],
+    "diagram": "workflow"
+  },
+  {
+    "id": "ts-sequence",
+    "title": "TypeScript sequence",
+    "source": "typescript-shop",
+    "args": [
+      "analyze",
+      "examples/typescript-shop",
+      "--diagram",
+      "sequence",
+      "--function",
+      "placeOrder"
+    ],
+    "diagram": "sequence"
+  },
+  {
+    "id": "ts-dataflow",
+    "title": "TypeScript dataflow",
+    "source": "typescript-shop",
+    "args": [
+      "analyze",
+      "examples/typescript-shop",
+      "--diagram",
+      "dataflow",
+      "--function",
+      "calculateTotal"
+    ],
+    "diagram": "dataflow"
+  },
+  {
+    "id": "ts-lifecycle",
+    "title": "TypeScript lifecycle",
+    "source": "typescript-shop",
+    "args": [
+      "analyze",
+      "examples/typescript-shop",
+      "--diagram",
+      "lifecycle"
+    ],
+    "diagram": "lifecycle"
+  },
+  {
+    "id": "ts-callers",
+    "title": "Find callers of authenticate",
+    "source": "typescript-shop",
+    "args": [
+      "ask",
+      "examples/typescript-shop",
+      "who calls authenticate?"
+    ],
+    "diagram": "architecture"
+  },
+  {
+    "id": "ts-single-function",
+    "title": "Single-file checkout workflow",
+    "source": "typescript-shop",
+    "args": [
+      "flow",
+      "examples/typescript-shop/src/checkout.ts",
+      "--function",
+      "checkout"
+    ],
+    "diagram": "workflow"
+  },
+  {
+    "id": "js-workflow",
+    "title": "JavaScript order workflow",
+    "source": "javascript-orders",
+    "args": [
+      "analyze",
+      "examples/javascript-orders",
+      "--diagram",
+      "workflow",
+      "--function",
+      "submitOrder"
+    ],
+    "diagram": "workflow"
+  },
+  {
+    "id": "python-architecture",
+    "title": "Python architecture",
+    "source": "python-orders",
+    "args": [
+      "analyze",
+      "examples/python-orders",
+      "--diagram",
+      "architecture",
+      "--language",
+      "python"
+    ],
+    "diagram": "architecture"
+  },
+  {
+    "id": "python-workflow",
+    "title": "Python workflow",
+    "source": "python-orders",
+    "args": [
+      "analyze",
+      "examples/python-orders",
+      "--diagram",
+      "workflow",
+      "--function",
+      "checkout",
+      "--language",
+      "python"
+    ],
+    "diagram": "workflow"
+  },
+  {
+    "id": "python-sequence",
+    "title": "Python sequence",
+    "source": "python-orders",
+    "args": [
+      "analyze",
+      "examples/python-orders",
+      "--diagram",
+      "sequence",
+      "--function",
+      "place_order",
+      "--language",
+      "python"
+    ],
+    "diagram": "sequence"
+  },
+  {
+    "id": "python-dataflow",
+    "title": "Python dataflow",
+    "source": "python-orders",
+    "args": [
+      "analyze",
+      "examples/python-orders",
+      "--diagram",
+      "dataflow",
+      "--function",
+      "calculate_total",
+      "--language",
+      "python"
+    ],
+    "diagram": "dataflow"
+  },
+  {
+    "id": "python-lifecycle",
+    "title": "Python lifecycle",
+    "source": "python-orders",
+    "args": [
+      "analyze",
+      "examples/python-orders",
+      "--diagram",
+      "lifecycle",
+      "--language",
+      "python"
+    ],
+    "diagram": "lifecycle"
+  },
+  {
+    "id": "uipath-windows-architecture",
+    "title": "uipath windows call map",
+    "source": "uipath-windows",
+    "args": [
+      "analyze",
+      "examples/uipath-windows",
+      "--diagram",
+      "architecture"
+    ],
+    "diagram": "architecture"
+  },
+  {
+    "id": "uipath-windows-workflow",
+    "title": "uipath windows workflow",
+    "source": "uipath-windows",
+    "args": [
+      "analyze",
+      "examples/uipath-windows",
+      "--diagram",
+      "workflow",
+      "--function",
+      "Main.xaml"
+    ],
+    "diagram": "workflow"
+  },
+  {
+    "id": "uipath-portable-architecture",
+    "title": "uipath portable call map",
+    "source": "uipath-portable",
+    "args": [
+      "analyze",
+      "examples/uipath-portable",
+      "--diagram",
+      "architecture"
+    ],
+    "diagram": "architecture"
+  },
+  {
+    "id": "uipath-portable-workflow",
+    "title": "uipath portable workflow",
+    "source": "uipath-portable",
+    "args": [
+      "analyze",
+      "examples/uipath-portable",
+      "--diagram",
+      "workflow",
+      "--function",
+      "Main.xaml"
+    ],
+    "diagram": "workflow"
+  },
+  {
+    "id": "uipath-legacy-architecture",
+    "title": "uipath legacy call map",
+    "source": "uipath-legacy",
+    "args": [
+      "analyze",
+      "examples/uipath-legacy",
+      "--diagram",
+      "architecture"
+    ],
+    "diagram": "architecture"
+  },
+  {
+    "id": "uipath-legacy-workflow",
+    "title": "uipath legacy workflow",
+    "source": "uipath-legacy",
+    "args": [
+      "analyze",
+      "examples/uipath-legacy",
+      "--diagram",
+      "workflow",
+      "--function",
+      "Main.xaml"
+    ],
+    "diagram": "workflow"
+  },
+  {
+    "id": "uipath-flowchart",
+    "title": "UiPath decision branches",
+    "source": "uipath-flowchart",
+    "args": [
+      "analyze",
+      "examples/uipath-flowchart",
+      "--diagram",
+      "workflow",
+      "--function",
+      "Main.xaml"
+    ],
+    "diagram": "workflow"
+  },
+  {
+    "id": "uipath-state-machine",
+    "title": "UiPath state-machine workflow",
+    "source": "uipath-state-machine",
+    "args": [
+      "analyze",
+      "examples/uipath-state-machine",
+      "--diagram",
+      "workflow",
+      "--function",
+      "Main.xaml"
+    ],
+    "diagram": "workflow"
+  },
+  {
+    "id": "maestro-workflow",
+    "title": "Maestro review and subflow",
+    "source": "maestro-review",
+    "args": [
+      "analyze",
+      "examples/maestro-review",
+      "--diagram",
+      "workflow",
+      "--function",
+      "Review.flow"
+    ],
+    "diagram": "workflow"
+  },
+  {
+    "id": "maestro-subflow",
+    "title": "Maestro notification subflow",
+    "source": "maestro-review",
+    "args": [
+      "analyze",
+      "examples/maestro-review",
+      "--diagram",
+      "workflow",
+      "--function",
+      "Review.flow#subflows/notify"
+    ],
+    "diagram": "workflow"
+  },
+  {
+    "id": "other-source-map",
+    "title": "Other languages: source inventory",
+    "source": "other-languages",
+    "args": [
+      "analyze",
+      "examples/other-languages",
+      "--diagram",
+      "architecture"
+    ],
+    "diagram": "architecture"
+  },
+  {
+    "id": "custom-extension",
+    "title": "Include a custom source extension",
+    "source": "other-languages",
+    "args": [
+      "analyze",
+      "examples/other-languages",
+      "--extension",
+      ".hs"
+    ],
+    "diagram": "architecture"
+  }
+]

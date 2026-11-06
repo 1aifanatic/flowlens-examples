@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "mode": "static",
+  "files": [
+    "README.md",
+    "job.py",
+    "orders.py",
+    "pricing.py"
+  ],
+  "groups": {
+    "README.md": [
+      "README.md"
+    ],
+    "job.py": [
+      "job.py"
+    ],
+    "orders.py": [
+      "orders.py"
+    ],
+    "pricing.py": [
+      "pricing.py"
+    ]
+  },
+  "imports": [
+    {
+      "from": "orders.py",
+      "to": "pricing.py",
+      "references": [
+        {
+          "file": "orders.py",
+          "line": 1,
+          "target": "pricing.py",
+          "specifier": "pricing"
+        }
+      ]
+    }
+  ],
+  "fileImports": [
+    {
+      "file": "orders.py",
+      "line": 1,
+      "target": "pricing.py",
+      "specifier": "pricing"
+    }
+  ],
+  "callSites": [],
+  "localCalls": [],
+  "unresolved": [],
+  "packages": [],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied."
+  ],
+  "bytesRead": 2256
+}

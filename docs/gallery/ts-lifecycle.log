@@ -1,0 +1,7 @@
+[examples repository]\docs\gallery\ts-lifecycle\lifecycle.html
+Diagram: [examples repository]\docs\gallery\ts-lifecycle\lifecycle.html
+Report: [examples repository]\docs\gallery\ts-lifecycle\report.html
+Evidence: [examples repository]\docs\gallery\ts-lifecycle\evidence.json
+No LLM. Zero model tokens.
+Note: Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.
+Note: Exported lifecycle objects may be mutated by other modules. Only declarations and direct uses in the selected source are checked; external mutations are not modeled.

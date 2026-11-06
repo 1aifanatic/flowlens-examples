@@ -1,0 +1,310 @@
+{
+  "title": "uipath-windows — UiPath",
+  "summary": "2 parsed workflow views (XAML and Maestro flows/subflows); 1 resolved XAML workflow invocations. Compatibility: Windows. Expressions: VisualBasic.",
+  "diagram": {
+    "schema_version": 1,
+    "diagram_type": "architecture",
+    "meta": {
+      "title": "uipath-windows",
+      "subtitle": "UiPath workflow invocations · local static analysis",
+      "visual_preset": "signal-flow",
+      "viewBox": [
+        710,
+        330
+      ]
+    },
+    "components": [
+      {
+        "id": "f0",
+        "type": "frontend",
+        "label": "Main.xaml",
+        "sublabel": "Entry workflow",
+        "pos": [
+          150,
+          100
+        ],
+        "size": [
+          210,
+          76
+        ]
+      },
+      {
+        "id": "f1",
+        "type": "backend",
+        "label": "Validate.xaml",
+        "sublabel": "Steps",
+        "pos": [
+          430,
+          100
+        ],
+        "size": [
+          210,
+          76
+        ]
+      }
+    ],
+    "connections": [
+      {
+        "from": "f0",
+        "to": "f1",
+        "fromSide": "right",
+        "toSide": "left",
+        "variant": "dashed"
+      }
+    ],
+    "cards": [
+      {
+        "dot": "cyan",
+        "title": "Workflow map",
+        "items": [
+          "Connections are literal InvokeWorkflowFile references.",
+          "Open report.html for individual workflow diagrams and full activity trees."
+        ]
+      }
+    ]
+  },
+  "facts": [
+    {
+      "file": "Main.xaml",
+      "line": 1,
+      "quote": "<Activity xmlns=\"http://schemas.microsoft.com/netfx/2009/xaml/activities\" xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\" xmlns:ui=\"http://schemas.uipath.com/workflow/activities\">",
+      "description": "Main.xaml: Activity"
+    },
+    {
+      "file": "Steps/Validate.xaml",
+      "line": 1,
+      "quote": "<Activity xmlns=\"http://schemas.microsoft.com/netfx/2009/xaml/activities\" xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\" xmlns:ui=\"http://schemas.uipath.com/workflow/activities\">",
+      "description": "Steps/Validate.xaml: Activity"
+    }
+  ],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.",
+    "Static workflow structure only: expressions are not evaluated; custom activity internals, runtime bindings, XAML switch-case edges and implicit exception paths are not inferred. Maestro edges retain their declared ports."
+  ],
+  "workflows": [
+    {
+      "file": "Main.xaml",
+      "outline": {
+        "name": "Activity",
+        "type": "Activity",
+        "line": 1,
+        "role": "",
+        "children": [
+          {
+            "name": "Process invoice",
+            "type": "Sequence",
+            "line": 2,
+            "role": "",
+            "children": [
+              {
+                "name": "Receive invoice",
+                "type": "LogMessage",
+                "line": 3,
+                "role": "",
+                "children": []
+              },
+              {
+                "name": "Validate invoice",
+                "type": "InvokeWorkflowFile",
+                "line": 4,
+                "role": "",
+                "children": []
+              },
+              {
+                "name": "Record result",
+                "type": "LogMessage",
+                "line": 5,
+                "role": "",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "diagram": {
+        "schema_version": 2,
+        "diagram_type": "workflow",
+        "meta": {
+          "title": "Main.xaml",
+          "subtitle": "Process invoice · structural overview",
+          "visual_preset": "signal-flow",
+          "animation": "none"
+        },
+        "lanes": [
+          {
+            "id": "row0",
+            "label": "Process invoice"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "n0",
+            "lane": "row0",
+            "col": 0,
+            "type": "backend",
+            "label": "Receive invoice",
+            "sublabel": "LogMessage",
+            "width": 230
+          },
+          {
+            "id": "n1",
+            "lane": "row0",
+            "col": 1,
+            "type": "backend",
+            "label": "Validate invoice",
+            "sublabel": "InvokeWorkflowFile",
+            "width": 230
+          },
+          {
+            "id": "n2",
+            "lane": "row0",
+            "col": 2,
+            "type": "backend",
+            "label": "Record result",
+            "sublabel": "LogMessage",
+            "width": 230
+          }
+        ],
+        "edges": [
+          {
+            "id": "e0",
+            "from": "n0",
+            "to": "n1"
+          },
+          {
+            "id": "e1",
+            "from": "n1",
+            "to": "n2"
+          }
+        ],
+        "cards": [
+          {
+            "dot": "cyan",
+            "title": "Reading this workflow",
+            "items": [
+              "Open report.html for the complete expandable activity tree and full names.",
+              "Containers stay grouped. Only sequence order and resolved state/flow transitions are connected.",
+              "Expressions, custom activity internals, switch cases and implicit exception paths are not evaluated."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "file": "Steps/Validate.xaml",
+      "outline": {
+        "name": "Activity",
+        "type": "Activity",
+        "line": 1,
+        "role": "",
+        "children": [
+          {
+            "name": "Validate invoice",
+            "type": "Sequence",
+            "line": 2,
+            "role": "",
+            "children": [
+              {
+                "name": "Check invoice fields",
+                "type": "LogMessage",
+                "line": 3,
+                "role": "",
+                "children": []
+              },
+              {
+                "name": "Validation complete",
+                "type": "LogMessage",
+                "line": 4,
+                "role": "",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "diagram": {
+        "schema_version": 2,
+        "diagram_type": "workflow",
+        "meta": {
+          "title": "Validate.xaml",
+          "subtitle": "Validate invoice · structural overview",
+          "visual_preset": "signal-flow",
+          "animation": "none"
+        },
+        "lanes": [
+          {
+            "id": "row0",
+            "label": "Validate invoice"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "n0",
+            "lane": "row0",
+            "col": 0,
+            "type": "backend",
+            "label": "Check invoice fields",
+            "sublabel": "LogMessage",
+            "width": 230
+          },
+          {
+            "id": "n1",
+            "lane": "row0",
+            "col": 1,
+            "type": "backend",
+            "label": "Validation complete",
+            "sublabel": "LogMessage",
+            "width": 230
+          }
+        ],
+        "edges": [
+          {
+            "id": "e0",
+            "from": "n0",
+            "to": "n1"
+          }
+        ],
+        "cards": [
+          {
+            "dot": "cyan",
+            "title": "Reading this workflow",
+            "items": [
+              "Open report.html for the complete expandable activity tree and full names.",
+              "Containers stay grouped. Only sequence order and resolved state/flow transitions are connected.",
+              "Expressions, custom activity internals, switch cases and implicit exception paths are not evaluated."
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "calls": [
+    {
+      "from": "Main.xaml",
+      "to": "Steps/Validate.xaml",
+      "value": "Steps/Validate.xaml",
+      "line": 4,
+      "name": "Validate invoice"
+    }
+  ],
+  "projects": [
+    {
+      "directory": ".",
+      "name": "uipath-windows",
+      "main": "Main.xaml",
+      "targetFramework": "Windows",
+      "expressionLanguage": "VisualBasic"
+    }
+  ],
+  "project": {
+    "name": "uipath-windows",
+    "main": "Main.xaml",
+    "targetFramework": "Windows",
+    "expressionLanguage": "VisualBasic"
+  },
+  "mode": "static",
+  "diagramType": "architecture",
+  "question": "",
+  "modelTokens": 0,
+  "scope": "Local XAML/XML and Maestro JSON parsing only. No LLM, source execution or runtime trace."
+}

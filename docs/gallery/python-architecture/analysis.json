@@ -1,0 +1,151 @@
+{
+  "diagram": {
+    "schema_version": 1,
+    "diagram_type": "architecture",
+    "meta": {
+      "title": "python-orders · source map",
+      "subtitle": "Local static analysis · source groups and candidate imports, not runtime topology",
+      "visual_preset": "signal-flow",
+      "legend": {
+        "mode": "hidden"
+      },
+      "viewBox": [
+        1270,
+        330
+      ]
+    },
+    "components": [
+      {
+        "id": "module1",
+        "type": "backend",
+        "label": "README.md",
+        "sublabel": "1 file",
+        "pos": [
+          150,
+          100
+        ],
+        "size": [
+          210,
+          76
+        ]
+      },
+      {
+        "id": "module2",
+        "type": "backend",
+        "label": "job.py",
+        "sublabel": "1 file",
+        "pos": [
+          430,
+          100
+        ],
+        "size": [
+          210,
+          76
+        ]
+      },
+      {
+        "id": "module3",
+        "type": "backend",
+        "label": "orders.py",
+        "sublabel": "1 file",
+        "pos": [
+          710,
+          100
+        ],
+        "size": [
+          210,
+          76
+        ]
+      },
+      {
+        "id": "module4",
+        "type": "backend",
+        "label": "pricing.py",
+        "sublabel": "1 file",
+        "pos": [
+          990,
+          100
+        ],
+        "size": [
+          210,
+          76
+        ]
+      }
+    ],
+    "connections": [
+      {
+        "from": "module3",
+        "to": "module4",
+        "fromSide": "right",
+        "toSide": "left",
+        "variant": "dashed"
+      }
+    ],
+    "cards": [
+      {
+        "dot": "cyan",
+        "title": "Detected locally",
+        "items": [
+          "4 files · 4 source groups · 0 npm manifests",
+          "No source code executed. No model or network required."
+        ]
+      },
+      {
+        "dot": "amber",
+        "title": "Interpretation limits",
+        "items": [
+          "Groups reflect source files/directories, not verified services.",
+          "JS/TS imports use syntax parsing; Python, embedded scripts and unsupported syntax use lexical candidates.",
+          "Imports do not prove execution. Computed imports and external package resolution may be unresolved."
+        ]
+      }
+    ]
+  },
+  "title": "Repository source map",
+  "summary": "4 scanned files, 4 source groups. Connections represent statically resolved imports. The excerpts below are selected by matching the question to source text; they are not a natural-language interpretation of the code.",
+  "facts": [
+    {
+      "file": "job.py",
+      "line": 1,
+      "quote": "TRANSITIONS = {\n    (\"queued\", \"start\"): \"running\",\n    (\"running\", \"complete\"): \"done\",\n    (\"running\", \"fail\"): \"failed\",\n    (\"failed\", \"retry\"): \"queued\",\n}\nTERMINAL_STATES = {\"done\"}\n",
+      "description": "Matching source excerpt"
+    },
+    {
+      "file": "orders.py",
+      "line": 1,
+      "quote": "from pricing import calculate_total\n\n\ndef checkout(stock, approved):\n    if stock < 1:\n        return \"sold out\"\n    if not approved:\n        return \"payment declined\"\n    return \"order confirmed\"\n\n\ndef place_order(price, quantity, tax_rate):\n    total = calculate_total(price, quantity, tax_rate)\n    return format_receipt(total)\n\n\ndef format_receipt(total):\n    return {\"total\": total, \"status\": \"accepted\"}\n",
+      "description": "Matching source excerpt"
+    },
+    {
+      "file": "pricing.py",
+      "line": 1,
+      "quote": "def calculate_total(price, quantity, tax_rate):\n    subtotal = price * quantity\n    tax = subtotal * tax_rate\n    total = subtotal + tax\n    return total\n",
+      "description": "Matching source excerpt"
+    },
+    {
+      "file": "README.md",
+      "line": 1,
+      "quote": "# python-orders\n\nSmall synthetic source fixture for FlowLens 0.10.0. No private project data.\n\nRun from the **repository root**, after `npm ci`:\n\n## Python architecture\n\n```sh\nnpm run examples -- python-architecture\n```\n\nEquivalent package command (with a global installation):\n\n```sh\nflowlens analyze examples/python-orders --diagram architecture --language python --open\n```\n\n## Python workflow\n\n```sh\nnpm run examples -- python-workflow\n```\n\nEquivalent package command (with a global installation):\n\n```sh\nflowlens analyze examples/python-orders --diagram workflow --function checkout --language python --open\n```\n\n## Python sequence\n\n```sh\nnpm run examples -- python-sequence\n```\n\nEquivalent package command (with a global installation):\n\n```sh\nflowlens analyze examples/python-orders --diagram sequence --function place_order --language python --open\n```\n\n## Python dataflow\n\n```sh\nnpm run examples -- python-dataflow\n```\n\nEquivalent package command (with a global installation):\n\n```sh\nflowlens analyze examples/python-orders --diagram dataflow --function calculate_total --language python --open\n```\n\n## Python lifecycle\n\n```sh\nnpm run examples -- python-lifecycle\n```\n\nEquivalent package command (with a global installation):\n\n```sh\nflowlens analyze examples/python-orders --diagram lifecycle --language python --open\n```\n\n",
+      "description": "Matching source excerpt"
+    },
+    {
+      "file": "README.md",
+      "line": 67,
+      "quote": "Open the generated gallery path printed by the runner. Every run uses a new directory, so it is safe to repeat. See the [main README](../../README.md) for scope and limits.\n",
+      "description": "Matching source excerpt"
+    }
+  ],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied."
+  ],
+  "mode": "static",
+  "diagramType": "architecture",
+  "question": "",
+  "query": {
+    "intent": "search",
+    "recognized": false,
+    "reason": "No question supplied; use the default source analysis."
+  },
+  "modelTokens": 0,
+  "scope": "Source parsing and deterministic query rules only. No LLM, source execution, or inferred runtime trace. Recognized questions return supported source facts; other questions are text searches, not semantic answers."
+}

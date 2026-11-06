@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "mode": "static",
+  "files": [
+    "README.md",
+    "Review.flow"
+  ],
+  "groups": {
+    "README.md": [
+      "README.md"
+    ],
+    "Review.flow": [
+      "Review.flow"
+    ]
+  },
+  "imports": [],
+  "fileImports": [],
+  "callSites": [],
+  "localCalls": [],
+  "unresolved": [],
+  "packages": [],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied."
+  ],
+  "bytesRead": 2690
+}

@@ -1,0 +1,370 @@
+{
+  "title": "calculate_total · variable dependencies",
+  "summary": "Selected pricing.py:1 calculate_total. Found 7 value nodes and 7 syntactic binding-read edges. This Python function analysis does not infer runtime call order, file/database roles, heap mutations or callee behavior.",
+  "facts": [
+    {
+      "file": "pricing.py",
+      "line": 1,
+      "quote": "price",
+      "description": "price: parameter supplied by caller; defaults are not expanded"
+    },
+    {
+      "file": "pricing.py",
+      "line": 1,
+      "quote": "quantity",
+      "description": "quantity: parameter supplied by caller; defaults are not expanded"
+    },
+    {
+      "file": "pricing.py",
+      "line": 1,
+      "quote": "tax_rate",
+      "description": "tax_rate: parameter supplied by caller; defaults are not expanded"
+    },
+    {
+      "file": "pricing.py",
+      "line": 2,
+      "quote": "subtotal = price * quantity",
+      "description": "subtotal #1: assignment references"
+    },
+    {
+      "file": "pricing.py",
+      "line": 3,
+      "quote": "tax = subtotal * tax_rate",
+      "description": "tax #1: assignment references"
+    },
+    {
+      "file": "pricing.py",
+      "line": 4,
+      "quote": "total = subtotal + tax",
+      "description": "total #1: assignment references"
+    },
+    {
+      "file": "pricing.py",
+      "line": 5,
+      "quote": "return total",
+      "description": "return: returned expression references"
+    }
+  ],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.",
+    "Selected pricing.py:1:1 calculate_total by explicit function selector; this diagram covers one Python function.",
+    "Edges are syntactic binding reads, not observed data transfers or execution order. Calls, heap aliasing, context-manager methods and exceptions are not expanded."
+  ],
+  "diagram": {
+    "schema_version": 1,
+    "diagram_type": "dataflow",
+    "meta": {
+      "title": "calculate_total · variable dependencies",
+      "subtitle": "Static Python binding references · calls and heap effects are opaque",
+      "animation": "trace",
+      "viewBox": [
+        1149,
+        696
+      ]
+    },
+    "stages": [
+      {
+        "label": "Inputs / literals"
+      },
+      {
+        "label": "Reference depth 1"
+      },
+      {
+        "label": "Reference depth 2"
+      },
+      {
+        "label": "Reference depth 3"
+      },
+      {
+        "label": "Later references"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "v1",
+        "type": "backend",
+        "label": "price",
+        "stage": 0,
+        "row": 0,
+        "yOffset": 168,
+        "width": 152
+      },
+      {
+        "id": "v2",
+        "type": "backend",
+        "label": "quantity",
+        "stage": 0,
+        "row": 0,
+        "yOffset": 282,
+        "width": 152
+      },
+      {
+        "id": "v3",
+        "type": "backend",
+        "label": "tax_rate",
+        "stage": 0,
+        "row": 0,
+        "yOffset": 396,
+        "width": 152
+      },
+      {
+        "id": "v4",
+        "type": "backend",
+        "label": "subtotal #1",
+        "stage": 1,
+        "row": 0,
+        "yOffset": 168,
+        "width": 152
+      },
+      {
+        "id": "v5",
+        "type": "backend",
+        "label": "tax #1",
+        "stage": 2,
+        "row": 0,
+        "yOffset": 168,
+        "width": 152
+      },
+      {
+        "id": "v6",
+        "type": "backend",
+        "label": "total #1",
+        "stage": 3,
+        "row": 0,
+        "yOffset": 168,
+        "width": 152
+      },
+      {
+        "id": "v7",
+        "type": "backend",
+        "label": "return",
+        "stage": 4,
+        "row": 0,
+        "yOffset": 168,
+        "width": 152
+      }
+    ],
+    "flows": [
+      {
+        "id": "r1",
+        "from": "v1",
+        "to": "v4",
+        "label": "reads",
+        "fromSide": "right",
+        "toSide": "left",
+        "via": [
+          [
+            196,
+            325
+          ],
+          [
+            196,
+            100
+          ],
+          [
+            219,
+            100
+          ],
+          [
+            219,
+            325
+          ]
+        ],
+        "labelAt": [
+          207.5,
+          100
+        ]
+      },
+      {
+        "id": "r2",
+        "from": "v2",
+        "to": "v4",
+        "label": "reads",
+        "fromSide": "right",
+        "toSide": "left",
+        "via": [
+          [
+            196,
+            439
+          ],
+          [
+            196,
+            124
+          ],
+          [
+            219,
+            124
+          ],
+          [
+            219,
+            325
+          ]
+        ],
+        "labelAt": [
+          207.5,
+          124
+        ]
+      },
+      {
+        "id": "r3",
+        "from": "v4",
+        "to": "v5",
+        "label": "reads",
+        "fromSide": "right",
+        "toSide": "left",
+        "via": [
+          [
+            411,
+            325
+          ],
+          [
+            411,
+            148
+          ],
+          [
+            434,
+            148
+          ],
+          [
+            434,
+            325
+          ]
+        ],
+        "labelAt": [
+          422.5,
+          148
+        ]
+      },
+      {
+        "id": "r4",
+        "from": "v3",
+        "to": "v5",
+        "label": "reads",
+        "fromSide": "right",
+        "toSide": "left",
+        "via": [
+          [
+            196,
+            553
+          ],
+          [
+            196,
+            172
+          ],
+          [
+            434,
+            172
+          ],
+          [
+            434,
+            325
+          ]
+        ],
+        "labelAt": [
+          315,
+          172
+        ]
+      },
+      {
+        "id": "r5",
+        "from": "v4",
+        "to": "v6",
+        "label": "reads",
+        "fromSide": "right",
+        "toSide": "left",
+        "via": [
+          [
+            411,
+            325
+          ],
+          [
+            411,
+            196
+          ],
+          [
+            649,
+            196
+          ],
+          [
+            649,
+            325
+          ]
+        ],
+        "labelAt": [
+          530,
+          196
+        ]
+      },
+      {
+        "id": "r6",
+        "from": "v5",
+        "to": "v6",
+        "label": "reads",
+        "fromSide": "right",
+        "toSide": "left",
+        "via": [
+          [
+            626,
+            325
+          ],
+          [
+            626,
+            220
+          ],
+          [
+            649,
+            220
+          ],
+          [
+            649,
+            325
+          ]
+        ],
+        "labelAt": [
+          637.5,
+          220
+        ]
+      },
+      {
+        "id": "r7",
+        "from": "v6",
+        "to": "v7",
+        "label": "reads",
+        "fromSide": "right",
+        "toSide": "left",
+        "via": [
+          [
+            841,
+            325
+          ],
+          [
+            841,
+            244
+          ],
+          [
+            864,
+            244
+          ],
+          [
+            864,
+            325
+          ]
+        ],
+        "labelAt": [
+          852.5,
+          244
+        ]
+      }
+    ]
+  },
+  "mode": "static",
+  "diagramType": "dataflow",
+  "question": "",
+  "query": {
+    "intent": "search",
+    "recognized": false,
+    "reason": "No question supplied; use the default source analysis."
+  },
+  "modelTokens": 0,
+  "scope": "Source parsing and deterministic query rules only. No LLM, source execution, or inferred runtime trace. Recognized questions return supported source facts; other questions are text searches, not semantic answers."
+}

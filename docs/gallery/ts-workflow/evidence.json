@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "mode": "static",
+  "files": [
+    "README.md",
+    "src/auth.ts",
+    "src/checkout.ts",
+    "src/job.ts",
+    "src/pricing.ts",
+    "src/service.ts"
+  ],
+  "groups": {
+    "(root)": [
+      "README.md"
+    ],
+    "src": [
+      "src/auth.ts",
+      "src/checkout.ts",
+      "src/job.ts",
+      "src/pricing.ts",
+      "src/service.ts"
+    ]
+  },
+  "imports": [],
+  "fileImports": [
+    {
+      "file": "src/service.ts",
+      "line": 1,
+      "target": "src/auth.ts",
+      "specifier": "./auth",
+      "symbols": [
+        "authenticate"
+      ]
+    },
+    {
+      "file": "src/service.ts",
+      "line": 2,
+      "target": "src/checkout.ts",
+      "specifier": "./checkout",
+      "symbols": [
+        "checkout"
+      ]
+    }
+  ],
+  "callSites": [
+    {
+      "file": "src/service.ts",
+      "line": 4,
+      "callee": "authenticate",
+      "specifier": "./auth",
+      "imported": "authenticate",
+      "defaultParameter": false
+    },
+    {
+      "file": "src/service.ts",
+      "line": 5,
+      "callee": "checkout",
+      "specifier": "./checkout",
+      "imported": "checkout",
+      "defaultParameter": false
+    }
+  ],
+  "localCalls": [],
+  "unresolved": [],
+  "packages": [],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied."
+  ],
+  "bytesRead": 2703
+}

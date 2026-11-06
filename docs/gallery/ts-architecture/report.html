@@ -1,0 +1,127 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Repository source map</title>
+<style>body{margin:0;background:#08111c;color:#e6eef6;font:17px/1.6 system-ui,sans-serif}main{max-width:1080px;margin:auto;padding:32px 24px;overflow-wrap:anywhere}a{color:#67e8f9}p,pre{white-space:pre-wrap;overflow-wrap:anywhere}article{border:1px solid #294056;border-radius:10px;padding:18px;margin:16px 0}small{color:#a8bbcd}summary{cursor:pointer}</style></head><body><main>
+<small>FLOWLENS · NO LLM · ZERO MODEL TOKENS</small><h1>Repository source map</h1>
+<p><small>Source search · No question supplied; use the default source analysis.</small></p><p>6 scanned files, 2 source groups. Connections represent statically resolved imports. The excerpts below are selected by matching the question to source text; they are not a natural-language interpretation of the code.</p><p><small>Source parsing and deterministic query rules only. No LLM, source execution, or inferred runtime trace. Recognized questions return supported source facts; other questions are text searches, not semantic answers.</small></p>
+<p><a href="architecture.html">Open interactive diagram</a> · <a href="analysis.json">Download source analysis</a></p>
+
+<h2>Coverage</h2><ul><li>Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.</li></ul>
+<h2>Source evidence</h2><article><p>Matching source excerpt</p><details><summary>src/auth.ts:1</summary><pre>export function authenticate(token: string) {
+  return token === &quot;demo-token&quot;;
+}
+</pre></details></article><article><p>Matching source excerpt</p><details><summary>src/service.ts:1</summary><pre>import { authenticate } from &quot;./auth&quot;;
+import { checkout } from &quot;./checkout&quot;;
+export function placeOrder(token: string, stock: number) {
+  const approved = authenticate(token);
+  return checkout(stock, approved);
+}
+</pre></details></article><article><p>Matching source excerpt</p><details><summary>src/checkout.ts:1</summary><pre>export function checkout(stock: number, approved: boolean) {
+  if (stock &lt; 1) return &quot;sold out&quot;;
+  if (!approved) return &quot;payment declined&quot;;
+  stock--;
+  return &quot;order confirmed&quot;;
+}
+</pre></details></article><article><p>Matching source excerpt</p><details><summary>src/job.ts:1</summary><pre>export const transitions = {
+  &quot;queued:start&quot;: &quot;running&quot;,
+  &quot;running:complete&quot;: &quot;done&quot;,
+  &quot;running:fail&quot;: &quot;failed&quot;,
+  &quot;failed:retry&quot;: &quot;queued&quot;
+} as const;
+export const terminal = new Set([&quot;done&quot;]);
+</pre></details></article><article><p>Matching source excerpt</p><details><summary>src/pricing.ts:1</summary><pre>export function calculateTotal(price: number, quantity: number) {
+  const subtotal = price * quantity;
+  const total = subtotal * 1.1;
+  return total;
+}
+</pre></details></article><article><p>Matching source excerpt</p><details><summary>README.md:1</summary><pre># typescript-shop
+
+Small synthetic source fixture for FlowLens 0.10.0. No private project data.
+
+Run from the **repository root**, after `npm ci`:
+
+## TypeScript architecture
+
+```sh
+npm run examples -- ts-architecture
+```
+
+Equivalent package command (with a global installation):
+
+```sh
+flowlens analyze examples/typescript-shop --diagram architecture --open
+```
+
+## TypeScript workflow
+
+```sh
+npm run examples -- ts-workflow
+```
+
+Equivalent package command (with a global installation):
+
+```sh
+flowlens analyze examples/typescript-shop --diagram workflow --function checkout --open
+```
+
+## TypeScript sequence
+
+```sh
+npm run examples -- ts-sequence
+```
+
+Equivalent package command (with a global installation):
+
+```sh
+flowlens analyze examples/typescript-shop --diagram sequence --function placeOrder --open
+```
+
+## TypeScript dataflow
+
+```sh
+npm run examples -- ts-dataflow
+```
+
+Equivalent package command (with a global installation):
+
+```sh
+flowlens analyze examples/typescript-shop --diagram dataflow --function calculateTotal --open
+```
+
+## TypeScript lifecycle
+
+```sh
+npm run examples -- ts-lifecycle
+```
+
+Equivalent package command (with a global installation):
+
+```sh
+flowlens analyze examples/typescript-shop --diagram lifecycle --open
+```
+
+## Find callers of authenticate
+
+```sh
+npm run examples -- ts-callers
+```
+
+Equivalent package command (with a global installation):
+
+```sh
+</pre></details></article><article><p>Matching source excerpt</p><details><summary>README.md:76</summary><pre>flowlens ask examples/typescript-shop &quot;who calls authenticate?&quot; --open
+```
+
+## Single-file checkout workflow
+
+```sh
+npm run examples -- ts-single-function
+```
+
+Equivalent package command (with a global installation):
+
+```sh
+flowlens flow examples/typescript-shop/src/checkout.ts --function checkout --open
+```
+
+Open the generated gallery path printed by the runner. Every run uses a new directory, so it is safe to repeat. See the [main README](../../README.md) for scope and limits.
+</pre></details></article>
+</main></body></html>

@@ -1,0 +1,54 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Validate.xaml",
+    "subtitle": "Validate invoice · structural overview",
+    "visual_preset": "signal-flow",
+    "animation": "none"
+  },
+  "lanes": [
+    {
+      "id": "row0",
+      "label": "Validate invoice"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "n0",
+      "lane": "row0",
+      "col": 0,
+      "type": "backend",
+      "label": "Check invoice fields",
+      "sublabel": "LogMessage",
+      "width": 230
+    },
+    {
+      "id": "n1",
+      "lane": "row0",
+      "col": 1,
+      "type": "backend",
+      "label": "Validation complete",
+      "sublabel": "LogMessage",
+      "width": 230
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "from": "n0",
+      "to": "n1"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Reading this workflow",
+      "items": [
+        "Open report.html for the complete expandable activity tree and full names.",
+        "Containers stay grouped. Only sequence order and resolved state/flow transitions are connected.",
+        "Expressions, custom activity internals, switch cases and implicit exception paths are not evaluated."
+      ]
+    }
+  ]
+}

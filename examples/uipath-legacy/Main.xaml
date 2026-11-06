@@ -1,0 +1,7 @@
+<Activity xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ui="http://schemas.uipath.com/workflow/activities">
+  <Sequence DisplayName="Process invoice">
+    <ui:LogMessage DisplayName="Receive invoice" />
+    <ui:InvokeWorkflowFile DisplayName="Validate invoice" WorkflowFileName="Steps/Validate.xaml" />
+    <ui:LogMessage DisplayName="Record result" />
+  </Sequence>
+</Activity>

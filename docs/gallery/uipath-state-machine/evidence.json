@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "mode": "static",
+  "files": [
+    "Main.xaml",
+    "README.md",
+    "project.json"
+  ],
+  "groups": {
+    "Main.xaml": [
+      "Main.xaml"
+    ],
+    "README.md": [
+      "README.md"
+    ],
+    "project.json": [
+      "project.json"
+    ]
+  },
+  "imports": [],
+  "fileImports": [],
+  "callSites": [],
+  "localCalls": [],
+  "unresolved": [],
+  "packages": [],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied."
+  ],
+  "bytesRead": 1571
+}

@@ -1,0 +1,7 @@
+[examples repository]\docs\gallery\ts-sequence\sequence.html
+Diagram: [examples repository]\docs\gallery\ts-sequence\sequence.html
+Report: [examples repository]\docs\gallery\ts-sequence\report.html
+Evidence: [examples repository]\docs\gallery\ts-sequence\evidence.json
+No LLM. Zero model tokens.
+Note: Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.
+Note: Selected src/service.ts:3:8 placeOrder by explicit function selector; this diagram covers one function.

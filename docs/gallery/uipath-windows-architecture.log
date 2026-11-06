@@ -1,0 +1,9 @@
+[examples repository]\docs\gallery\uipath-windows-architecture\architecture.html
+[examples repository]\docs\gallery\uipath-windows-architecture\uipath-0.html
+[examples repository]\docs\gallery\uipath-windows-architecture\uipath-1.html
+Diagram: [examples repository]\docs\gallery\uipath-windows-architecture\architecture.html
+Report: [examples repository]\docs\gallery\uipath-windows-architecture\report.html
+Evidence: [examples repository]\docs\gallery\uipath-windows-architecture\evidence.json
+No LLM. Zero model tokens.
+Note: Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.
+Note: Static workflow structure only: expressions are not evaluated; custom activity internals, runtime bindings, XAML switch-case edges and implicit exception paths are not inferred. Maestro edges retain their declared ports.

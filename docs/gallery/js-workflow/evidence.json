@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "mode": "static",
+  "files": [
+    "README.md",
+    "order.mjs",
+    "receipt.mjs"
+  ],
+  "groups": {
+    "README.md": [
+      "README.md"
+    ],
+    "order.mjs": [
+      "order.mjs"
+    ],
+    "receipt.mjs": [
+      "receipt.mjs"
+    ]
+  },
+  "imports": [
+    {
+      "from": "order.mjs",
+      "to": "receipt.mjs",
+      "references": [
+        {
+          "file": "order.mjs",
+          "line": 1,
+          "target": "receipt.mjs",
+          "specifier": "./receipt.mjs",
+          "symbols": [
+            "receipt"
+          ]
+        }
+      ]
+    }
+  ],
+  "fileImports": [
+    {
+      "file": "order.mjs",
+      "line": 1,
+      "target": "receipt.mjs",
+      "specifier": "./receipt.mjs",
+      "symbols": [
+        "receipt"
+      ]
+    }
+  ],
+  "callSites": [
+    {
+      "file": "order.mjs",
+      "line": 4,
+      "callee": "receipt",
+      "specifier": "./receipt.mjs",
+      "imported": "receipt",
+      "defaultParameter": false
+    }
+  ],
+  "localCalls": [],
+  "unresolved": [],
+  "packages": [],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied."
+  ],
+  "bytesRead": 792
+}

@@ -1,0 +1,15 @@
+{
+  "name": "flowlens-examples",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Reproducible, zero-LLM-token examples for FlowLens",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "examples": "node scripts/generate.mjs",
+    "examples:list": "node scripts/generate.mjs --list",
+    "verify": "node scripts/verify.mjs"
+  },
+  "devDependencies": { "@1aifanatic/flowlens": "0.10.0" }
+}

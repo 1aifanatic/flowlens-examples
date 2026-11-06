@@ -1,0 +1,190 @@
+{
+  "diagram": {
+    "schema_version": 2,
+    "diagram_type": "workflow",
+    "meta": {
+      "title": "checkout · source control flow",
+      "subtitle": "Static syntax · conservative catch paths · callees not expanded",
+      "animation": "trace"
+    },
+    "lanes": [
+      {
+        "id": "row0",
+        "label": "Steps 1–4"
+      },
+      {
+        "id": "row1",
+        "label": "Steps 5–6"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "n6",
+        "lane": "row0",
+        "col": 0,
+        "type": "backend",
+        "label": "stock < 1",
+        "tag": "condition",
+        "width": 240
+      },
+      {
+        "id": "n7",
+        "lane": "row0",
+        "col": 1,
+        "type": "backend",
+        "label": "return \"sold out\";",
+        "tag": "terminal",
+        "width": 240
+      },
+      {
+        "id": "n4",
+        "lane": "row0",
+        "col": 2,
+        "type": "backend",
+        "label": "!approved",
+        "tag": "condition",
+        "width": 240
+      },
+      {
+        "id": "n5",
+        "lane": "row0",
+        "col": 3,
+        "type": "backend",
+        "label": "return \"payment declined\";",
+        "tag": "terminal",
+        "width": 240
+      },
+      {
+        "id": "n3",
+        "lane": "row1",
+        "col": 0,
+        "type": "backend",
+        "label": "stock--;",
+        "tag": "action",
+        "width": 240
+      },
+      {
+        "id": "n2",
+        "lane": "row1",
+        "col": 1,
+        "type": "backend",
+        "label": "return \"order confirmed\";",
+        "tag": "terminal",
+        "width": 240
+      }
+    ],
+    "edges": [
+      {
+        "id": "e0",
+        "from": "n3",
+        "to": "n2",
+        "label": "next",
+        "role": "main"
+      },
+      {
+        "id": "e1",
+        "from": "n4",
+        "to": "n5",
+        "label": "true",
+        "role": "branch"
+      },
+      {
+        "id": "e2",
+        "from": "n4",
+        "to": "n3",
+        "label": "false",
+        "role": "branch"
+      },
+      {
+        "id": "e3",
+        "from": "n6",
+        "to": "n7",
+        "label": "true",
+        "role": "branch"
+      },
+      {
+        "id": "e4",
+        "from": "n6",
+        "to": "n4",
+        "label": "false",
+        "role": "branch"
+      }
+    ],
+    "cards": [
+      {
+        "dot": "amber",
+        "title": "Scope",
+        "items": [
+          "Parsed source; no model request and no source execution.",
+          "Conservative may-throw edges to enclosing catch handlers; uncaught implicit exceptions and callee internals are not expanded."
+        ]
+      }
+    ]
+  },
+  "title": "checkout · source control flow",
+  "summary": "checkout in src/checkout.ts:1:8: 6 source steps and 5 syntax transitions. Branch labels follow the written conditions. Conservative may-throw edges to enclosing catch handlers; uncaught implicit exceptions and callee internals are not expanded. Source code was not executed.",
+  "facts": [
+    {
+      "file": "src/checkout.ts",
+      "line": 2,
+      "column": 7,
+      "endLine": 2,
+      "quote": "stock < 1",
+      "description": "condition: stock < 1"
+    },
+    {
+      "file": "src/checkout.ts",
+      "line": 2,
+      "column": 18,
+      "endLine": 2,
+      "quote": "return \"sold out\";",
+      "description": "return: return \"sold out\";"
+    },
+    {
+      "file": "src/checkout.ts",
+      "line": 3,
+      "column": 7,
+      "endLine": 3,
+      "quote": "!approved",
+      "description": "condition: !approved"
+    },
+    {
+      "file": "src/checkout.ts",
+      "line": 3,
+      "column": 18,
+      "endLine": 3,
+      "quote": "return \"payment declined\";",
+      "description": "return: return \"payment declined\";"
+    },
+    {
+      "file": "src/checkout.ts",
+      "line": 4,
+      "column": 3,
+      "endLine": 4,
+      "quote": "stock--;",
+      "description": "action: stock--;"
+    },
+    {
+      "file": "src/checkout.ts",
+      "line": 5,
+      "column": 3,
+      "endLine": 5,
+      "quote": "return \"order confirmed\";",
+      "description": "return: return \"order confirmed\";"
+    }
+  ],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.",
+    "Selected src/checkout.ts:1:8 checkout by explicit function selector; this diagram covers one function."
+  ],
+  "mode": "static",
+  "diagramType": "workflow",
+  "question": "",
+  "query": {
+    "intent": "search",
+    "recognized": false,
+    "reason": "No question supplied; use the default source analysis."
+  },
+  "modelTokens": 0,
+  "scope": "Source parsing and deterministic query rules only. No LLM, source execution, or inferred runtime trace. Recognized questions return supported source facts; other questions are text searches, not semantic answers."
+}

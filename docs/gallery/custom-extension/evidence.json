@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "mode": "static",
+  "files": [
+    "README.md",
+    "Service.cs",
+    "main.go",
+    "schema.sql",
+    "status.hs"
+  ],
+  "groups": {
+    "README.md": [
+      "README.md"
+    ],
+    "Service.cs": [
+      "Service.cs"
+    ],
+    "main.go": [
+      "main.go"
+    ],
+    "schema.sql": [
+      "schema.sql"
+    ],
+    "status.hs": [
+      "status.hs"
+    ]
+  },
+  "imports": [],
+  "fileImports": [],
+  "callSites": [],
+  "localCalls": [],
+  "unresolved": [],
+  "packages": [],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied."
+  ],
+  "bytesRead": 996
+}

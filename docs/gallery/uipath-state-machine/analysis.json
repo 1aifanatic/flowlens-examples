@@ -1,0 +1,252 @@
+{
+  "title": "Job states — UiPath",
+  "summary": "1 parsed workflow views (XAML and Maestro flows/subflows); 0 resolved XAML workflow invocations. Compatibility: Windows. Expressions: unspecified.",
+  "diagram": {
+    "schema_version": 2,
+    "diagram_type": "workflow",
+    "meta": {
+      "title": "Main.xaml",
+      "subtitle": "Process job · structural overview",
+      "visual_preset": "signal-flow",
+      "animation": "none"
+    },
+    "lanes": [
+      {
+        "id": "row0",
+        "label": "Process job"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "n0",
+        "lane": "row0",
+        "col": 0,
+        "type": "backend",
+        "label": "Ready",
+        "sublabel": "State",
+        "width": 230
+      },
+      {
+        "id": "n1",
+        "lane": "row0",
+        "col": 1,
+        "type": "backend",
+        "label": "Running",
+        "sublabel": "State",
+        "width": 230
+      },
+      {
+        "id": "n2",
+        "lane": "row0",
+        "col": 2,
+        "type": "backend",
+        "label": "Done",
+        "sublabel": "State",
+        "width": 230
+      }
+    ],
+    "edges": [
+      {
+        "id": "e0",
+        "from": "n0",
+        "to": "n1",
+        "label": "Start"
+      },
+      {
+        "id": "e1",
+        "from": "n1",
+        "to": "n2",
+        "label": "Complete"
+      },
+      {
+        "id": "e2",
+        "from": "n1",
+        "to": "n0",
+        "label": "Retry"
+      }
+    ],
+    "cards": [
+      {
+        "dot": "cyan",
+        "title": "Reading this workflow",
+        "items": [
+          "Open report.html for the complete expandable activity tree and full names.",
+          "Containers stay grouped. Only sequence order and resolved state/flow transitions are connected.",
+          "Expressions, custom activity internals, switch cases and implicit exception paths are not evaluated."
+        ]
+      }
+    ]
+  },
+  "facts": [
+    {
+      "file": "Main.xaml",
+      "line": 1,
+      "quote": "<Activity xmlns=\"http://schemas.microsoft.com/netfx/2009/xaml/activities\" xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\" xmlns:ui=\"http://schemas.uipath.com/workflow/activities\">",
+      "description": "Main.xaml: Activity"
+    }
+  ],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.",
+    "Static workflow structure only: expressions are not evaluated; custom activity internals, runtime bindings, XAML switch-case edges and implicit exception paths are not inferred. Maestro edges retain their declared ports."
+  ],
+  "workflows": [
+    {
+      "file": "Main.xaml",
+      "outline": {
+        "name": "Activity",
+        "type": "Activity",
+        "line": 1,
+        "role": "",
+        "children": [
+          {
+            "name": "Process job",
+            "type": "StateMachine",
+            "line": 2,
+            "role": "",
+            "children": [
+              {
+                "name": "Ready",
+                "type": "State",
+                "line": 3,
+                "role": "",
+                "children": [
+                  {
+                    "name": "Start",
+                    "type": "Transition",
+                    "line": 3,
+                    "role": "Transitions",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Running",
+                "type": "State",
+                "line": 4,
+                "role": "",
+                "children": [
+                  {
+                    "name": "Complete",
+                    "type": "Transition",
+                    "line": 4,
+                    "role": "Transitions",
+                    "children": []
+                  },
+                  {
+                    "name": "Retry",
+                    "type": "Transition",
+                    "line": 4,
+                    "role": "Transitions",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Done",
+                "type": "State",
+                "line": 5,
+                "role": "",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "diagram": {
+        "schema_version": 2,
+        "diagram_type": "workflow",
+        "meta": {
+          "title": "Main.xaml",
+          "subtitle": "Process job · structural overview",
+          "visual_preset": "signal-flow",
+          "animation": "none"
+        },
+        "lanes": [
+          {
+            "id": "row0",
+            "label": "Process job"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "n0",
+            "lane": "row0",
+            "col": 0,
+            "type": "backend",
+            "label": "Ready",
+            "sublabel": "State",
+            "width": 230
+          },
+          {
+            "id": "n1",
+            "lane": "row0",
+            "col": 1,
+            "type": "backend",
+            "label": "Running",
+            "sublabel": "State",
+            "width": 230
+          },
+          {
+            "id": "n2",
+            "lane": "row0",
+            "col": 2,
+            "type": "backend",
+            "label": "Done",
+            "sublabel": "State",
+            "width": 230
+          }
+        ],
+        "edges": [
+          {
+            "id": "e0",
+            "from": "n0",
+            "to": "n1",
+            "label": "Start"
+          },
+          {
+            "id": "e1",
+            "from": "n1",
+            "to": "n2",
+            "label": "Complete"
+          },
+          {
+            "id": "e2",
+            "from": "n1",
+            "to": "n0",
+            "label": "Retry"
+          }
+        ],
+        "cards": [
+          {
+            "dot": "cyan",
+            "title": "Reading this workflow",
+            "items": [
+              "Open report.html for the complete expandable activity tree and full names.",
+              "Containers stay grouped. Only sequence order and resolved state/flow transitions are connected.",
+              "Expressions, custom activity internals, switch cases and implicit exception paths are not evaluated."
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "calls": [],
+  "projects": [
+    {
+      "directory": ".",
+      "name": "Job states",
+      "main": "Main.xaml",
+      "targetFramework": "Windows"
+    }
+  ],
+  "project": {
+    "name": "Job states",
+    "main": "Main.xaml",
+    "targetFramework": "Windows"
+  },
+  "mode": "static",
+  "diagramType": "workflow",
+  "question": "",
+  "modelTokens": 0,
+  "scope": "Local XAML/XML and Maestro JSON parsing only. No LLM, source execution or runtime trace."
+}

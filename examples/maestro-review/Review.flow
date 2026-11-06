@@ -1,0 +1,87 @@
+{
+  "name": "Review request",
+  "nodes": [
+    {
+      "id": "start",
+      "type": "core.trigger.manual",
+      "display": {
+        "label": "Receive request"
+      },
+      "inputs": {}
+    },
+    {
+      "id": "review",
+      "type": "core.action.script",
+      "display": {
+        "label": "Review request"
+      },
+      "inputs": {}
+    },
+    {
+      "id": "approve",
+      "type": "core.action.script",
+      "display": {
+        "label": "Approved"
+      },
+      "inputs": {}
+    },
+    {
+      "id": "reject",
+      "type": "core.action.script",
+      "display": {
+        "label": "Rejected"
+      },
+      "inputs": {}
+    }
+  ],
+  "edges": [
+    {
+      "sourceNodeId": "start",
+      "sourcePort": "output",
+      "targetNodeId": "review",
+      "targetPort": "input"
+    },
+    {
+      "sourceNodeId": "review",
+      "sourcePort": "approved",
+      "targetNodeId": "approve",
+      "targetPort": "input"
+    },
+    {
+      "sourceNodeId": "review",
+      "sourcePort": "rejected",
+      "targetNodeId": "reject",
+      "targetPort": "input"
+    }
+  ],
+  "subflows": {
+    "notify": {
+      "nodes": [
+        {
+          "id": "prepare",
+          "type": "core.action.script",
+          "display": {
+            "label": "Prepare message"
+          },
+          "inputs": {}
+        },
+        {
+          "id": "send",
+          "type": "core.action.script",
+          "display": {
+            "label": "Send notification"
+          },
+          "inputs": {}
+        }
+      ],
+      "edges": [
+        {
+          "sourceNodeId": "prepare",
+          "sourcePort": "output",
+          "targetNodeId": "send",
+          "targetPort": "input"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "title": "place_order · Python call sites",
+  "summary": "Selected place_order in orders.py. 2 explicit resolved call sites in source evaluation order; not a runtime trace. Exceptions can stop later calls. Dynamic rebinding, implicit Python protocol calls and callee internals are not expanded.",
+  "facts": [
+    {
+      "file": "orders.py",
+      "line": 13,
+      "quote": "calculate_total(price, quantity, tax_rate)",
+      "description": "Call-site reference to import calculate_total from pricing. Completion and return values are not inferred."
+    },
+    {
+      "file": "orders.py",
+      "line": 14,
+      "quote": "format_receipt(total)",
+      "description": "Call-site reference to local function format_receipt at orders.py:17. Completion and return values are not inferred."
+    }
+  ],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.",
+    "Selected orders.py:12:1 place_order by explicit function selector; this diagram covers one Python function."
+  ],
+  "diagram": {
+    "schema_version": 1,
+    "diagram_type": "sequence",
+    "meta": {
+      "title": "place_order · call sites",
+      "subtitle": "Static Python call sites · not a runtime trace",
+      "visual_preset": "signal-flow",
+      "animation": "trace",
+      "column_fit": "spread",
+      "viewBox": [
+        864,
+        480
+      ]
+    },
+    "participants": [
+      {
+        "id": "caller",
+        "type": "backend",
+        "label": "place_order"
+      },
+      {
+        "id": "callee1",
+        "type": "backend",
+        "label": "calculate_total"
+      },
+      {
+        "id": "callee2",
+        "type": "backend",
+        "label": "format_receipt"
+      }
+    ],
+    "messages": [
+      {
+        "id": "call1",
+        "from": "caller",
+        "to": "callee1",
+        "y": 180,
+        "label": "calculate_total() · L13",
+        "variant": "default"
+      },
+      {
+        "id": "call2",
+        "from": "caller",
+        "to": "callee2",
+        "y": 228,
+        "label": "format_receipt() · L14",
+        "variant": "default"
+      }
+    ],
+    "cards": [
+      {
+        "dot": "amber",
+        "title": "Scope",
+        "items": [
+          "Selected place_order in orders.py. 2 explicit resolved call sites in source evaluation order; not a runtime trace. Exceptions can stop later calls. Dynamic rebinding, implicit Python protocol calls and callee internals are not expanded.",
+          "Unresolved calls are listed in the source report. No source execution or LLM."
+        ]
+      }
+    ]
+  },
+  "mode": "static",
+  "diagramType": "sequence",
+  "question": "",
+  "query": {
+    "intent": "search",
+    "recognized": false,
+    "reason": "No question supplied; use the default source analysis."
+  },
+  "modelTokens": 0,
+  "scope": "Source parsing and deterministic query rules only. No LLM, source execution, or inferred runtime trace. Recognized questions return supported source facts; other questions are text searches, not semantic answers."
+}

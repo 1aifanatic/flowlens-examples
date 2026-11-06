@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "placeOrder · source call sequence",
+    "subtitle": "Static call sites · no execution or inferred returns",
+    "animation": "trace",
+    "column_fit": "spread",
+    "viewBox": [
+      864,
+      480
+    ]
+  },
+  "participants": [
+    {
+      "id": "caller",
+      "type": "backend",
+      "label": "placeOrder"
+    },
+    {
+      "id": "callee1",
+      "type": "backend",
+      "label": "authenticate"
+    },
+    {
+      "id": "callee2",
+      "type": "backend",
+      "label": "checkout"
+    }
+  ],
+  "messages": [
+    {
+      "id": "call1",
+      "from": "caller",
+      "to": "callee1",
+      "y": 180,
+      "label": "authenticate() · L4",
+      "variant": "default"
+    },
+    {
+      "id": "call2",
+      "from": "caller",
+      "to": "callee2",
+      "y": 228,
+      "label": "checkout() · L5",
+      "variant": "default"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Scope",
+      "items": [
+        "Resolved source call sites within one straight-line function. Earlier exceptions may prevent later calls.",
+        "Callees are not expanded. Asynchronous completion order and return values are not inferred."
+      ]
+    }
+  ]
+}

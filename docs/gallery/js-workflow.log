@@ -1,0 +1,7 @@
+[examples repository]\docs\gallery\js-workflow\workflow.html
+Diagram: [examples repository]\docs\gallery\js-workflow\workflow.html
+Report: [examples repository]\docs\gallery\js-workflow\report.html
+Evidence: [examples repository]\docs\gallery\js-workflow\evidence.json
+No LLM. Zero model tokens.
+Note: Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.
+Note: Selected order.mjs:2:8 submitOrder by explicit function selector; this diagram covers one function.

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "mode": "static",
+  "files": [
+    "Main.xaml",
+    "README.md",
+    "Steps/Validate.xaml",
+    "project.json"
+  ],
+  "groups": {
+    "(root)": [
+      "Main.xaml",
+      "README.md",
+      "project.json"
+    ],
+    "Steps": [
+      "Steps/Validate.xaml"
+    ]
+  },
+  "imports": [],
+  "fileImports": [],
+  "callSites": [],
+  "localCalls": [],
+  "unresolved": [],
+  "packages": [],
+  "warnings": [
+    "Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied."
+  ],
+  "bytesRead": 2006
+}

@@ -1,0 +1,106 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Repository source map</title>
+<style>body{margin:0;background:#08111c;color:#e6eef6;font:17px/1.6 system-ui,sans-serif}main{max-width:1080px;margin:auto;padding:32px 24px;overflow-wrap:anywhere}a{color:#67e8f9}p,pre{white-space:pre-wrap;overflow-wrap:anywhere}article{border:1px solid #294056;border-radius:10px;padding:18px;margin:16px 0}small{color:#a8bbcd}summary{cursor:pointer}</style></head><body><main>
+<small>FLOWLENS · NO LLM · ZERO MODEL TOKENS</small><h1>Repository source map</h1>
+<p><small>Source search · No question supplied; use the default source analysis.</small></p><p>4 scanned files, 4 source groups. Connections represent statically resolved imports. The excerpts below are selected by matching the question to source text; they are not a natural-language interpretation of the code.</p><p><small>Source parsing and deterministic query rules only. No LLM, source execution, or inferred runtime trace. Recognized questions return supported source facts; other questions are text searches, not semantic answers.</small></p>
+<p><a href="architecture.html">Open interactive diagram</a> · <a href="analysis.json">Download source analysis</a></p>
+
+<h2>Coverage</h2><ul><li>Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.</li></ul>
+<h2>Source evidence</h2><article><p>Matching source excerpt</p><details><summary>job.py:1</summary><pre>TRANSITIONS = {
+    (&quot;queued&quot;, &quot;start&quot;): &quot;running&quot;,
+    (&quot;running&quot;, &quot;complete&quot;): &quot;done&quot;,
+    (&quot;running&quot;, &quot;fail&quot;): &quot;failed&quot;,
+    (&quot;failed&quot;, &quot;retry&quot;): &quot;queued&quot;,
+}
+TERMINAL_STATES = {&quot;done&quot;}
+</pre></details></article><article><p>Matching source excerpt</p><details><summary>orders.py:1</summary><pre>from pricing import calculate_total
+
+
+def checkout(stock, approved):
+    if stock &lt; 1:
+        return &quot;sold out&quot;
+    if not approved:
+        return &quot;payment declined&quot;
+    return &quot;order confirmed&quot;
+
+
+def place_order(price, quantity, tax_rate):
+    total = calculate_total(price, quantity, tax_rate)
+    return format_receipt(total)
+
+
+def format_receipt(total):
+    return {&quot;total&quot;: total, &quot;status&quot;: &quot;accepted&quot;}
+</pre></details></article><article><p>Matching source excerpt</p><details><summary>pricing.py:1</summary><pre>def calculate_total(price, quantity, tax_rate):
+    subtotal = price * quantity
+    tax = subtotal * tax_rate
+    total = subtotal + tax
+    return total
+</pre></details></article><article><p>Matching source excerpt</p><details><summary>README.md:1</summary><pre># python-orders
+
+Small synthetic source fixture for FlowLens 0.10.0. No private project data.
+
+Run from the **repository root**, after `npm ci`:
+
+## Python architecture
+
+```sh
+npm run examples -- python-architecture
+```
+
+Equivalent package command (with a global installation):
+
+```sh
+flowlens analyze examples/python-orders --diagram architecture --language python --open
+```
+
+## Python workflow
+
+```sh
+npm run examples -- python-workflow
+```
+
+Equivalent package command (with a global installation):
+
+```sh
+flowlens analyze examples/python-orders --diagram workflow --function checkout --language python --open
+```
+
+## Python sequence
+
+```sh
+npm run examples -- python-sequence
+```
+
+Equivalent package command (with a global installation):
+
+```sh
+flowlens analyze examples/python-orders --diagram sequence --function place_order --language python --open
+```
+
+## Python dataflow
+
+```sh
+npm run examples -- python-dataflow
+```
+
+Equivalent package command (with a global installation):
+
+```sh
+flowlens analyze examples/python-orders --diagram dataflow --function calculate_total --language python --open
+```
+
+## Python lifecycle
+
+```sh
+npm run examples -- python-lifecycle
+```
+
+Equivalent package command (with a global installation):
+
+```sh
+flowlens analyze examples/python-orders --diagram lifecycle --language python --open
+```
+
+</pre></details></article><article><p>Matching source excerpt</p><details><summary>README.md:67</summary><pre>Open the generated gallery path printed by the runner. Every run uses a new directory, so it is safe to repeat. See the [main README](../../README.md) for scope and limits.
+</pre></details></article>
+</main></body></html>

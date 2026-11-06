@@ -1,0 +1,7 @@
+[examples repository]\docs\gallery\python-lifecycle\lifecycle.html
+Diagram: [examples repository]\docs\gallery\python-lifecycle\lifecycle.html
+Report: [examples repository]\docs\gallery\python-lifecycle\report.html
+Evidence: [examples repository]\docs\gallery\python-lifecycle\evidence.json
+No LLM. Zero model tokens.
+Note: Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.
+Note: Only declared dictionary entries and direct uses in the selected Python scope are checked. External mutations and runtime monkey-patching are not modeled.

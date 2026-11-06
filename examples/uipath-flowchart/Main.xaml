@@ -1,0 +1,7 @@
+<Activity xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ui="http://schemas.uipath.com/workflow/activities">
+  <Flowchart DisplayName="Approve invoice">
+    <FlowDecision x:Name="check" DisplayName="Invoice valid" True="{x:Reference approve}" False="{x:Reference reject}" />
+    <FlowStep x:Name="approve"><FlowStep.Action><ui:LogMessage DisplayName="Approve invoice" /></FlowStep.Action></FlowStep>
+    <FlowStep x:Name="reject"><FlowStep.Action><ui:LogMessage DisplayName="Reject invoice" /></FlowStep.Action></FlowStep>
+  </Flowchart>
+</Activity>

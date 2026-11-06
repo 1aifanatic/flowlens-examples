@@ -1,0 +1,5 @@
+{
+  "name": "Job states",
+  "main": "Main.xaml",
+  "targetFramework": "Windows"
+}

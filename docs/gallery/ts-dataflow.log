@@ -1,0 +1,7 @@
+[examples repository]\docs\gallery\ts-dataflow\dataflow.html
+Diagram: [examples repository]\docs\gallery\ts-dataflow\dataflow.html
+Report: [examples repository]\docs\gallery\ts-dataflow\report.html
+Evidence: [examples repository]\docs\gallery\ts-dataflow\evidence.json
+No LLM. Zero model tokens.
+Note: Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.
+Note: Edges are syntactic binding reads, not observed data transfers or execution order. Calls are opaque; object aliasing, property mutations, implicit exceptions and callee side effects are not expanded.

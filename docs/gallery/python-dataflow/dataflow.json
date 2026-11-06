@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "calculate_total · variable dependencies",
+    "subtitle": "Static Python binding references · calls and heap effects are opaque",
+    "animation": "trace",
+    "viewBox": [
+      1149,
+      696
+    ]
+  },
+  "stages": [
+    {
+      "label": "Inputs / literals"
+    },
+    {
+      "label": "Reference depth 1"
+    },
+    {
+      "label": "Reference depth 2"
+    },
+    {
+      "label": "Reference depth 3"
+    },
+    {
+      "label": "Later references"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "v1",
+      "type": "backend",
+      "label": "price",
+      "stage": 0,
+      "row": 0,
+      "yOffset": 168,
+      "width": 152
+    },
+    {
+      "id": "v2",
+      "type": "backend",
+      "label": "quantity",
+      "stage": 0,
+      "row": 0,
+      "yOffset": 282,
+      "width": 152
+    },
+    {
+      "id": "v3",
+      "type": "backend",
+      "label": "tax_rate",
+      "stage": 0,
+      "row": 0,
+      "yOffset": 396,
+      "width": 152
+    },
+    {
+      "id": "v4",
+      "type": "backend",
+      "label": "subtotal #1",
+      "stage": 1,
+      "row": 0,
+      "yOffset": 168,
+      "width": 152
+    },
+    {
+      "id": "v5",
+      "type": "backend",
+      "label": "tax #1",
+      "stage": 2,
+      "row": 0,
+      "yOffset": 168,
+      "width": 152
+    },
+    {
+      "id": "v6",
+      "type": "backend",
+      "label": "total #1",
+      "stage": 3,
+      "row": 0,
+      "yOffset": 168,
+      "width": 152
+    },
+    {
+      "id": "v7",
+      "type": "backend",
+      "label": "return",
+      "stage": 4,
+      "row": 0,
+      "yOffset": 168,
+      "width": 152
+    }
+  ],
+  "flows": [
+    {
+      "id": "r1",
+      "from": "v1",
+      "to": "v4",
+      "label": "reads",
+      "fromSide": "right",
+      "toSide": "left",
+      "via": [
+        [
+          196,
+          325
+        ],
+        [
+          196,
+          100
+        ],
+        [
+          219,
+          100
+        ],
+        [
+          219,
+          325
+        ]
+      ],
+      "labelAt": [
+        207.5,
+        100
+      ]
+    },
+    {
+      "id": "r2",
+      "from": "v2",
+      "to": "v4",
+      "label": "reads",
+      "fromSide": "right",
+      "toSide": "left",
+      "via": [
+        [
+          196,
+          439
+        ],
+        [
+          196,
+          124
+        ],
+        [
+          219,
+          124
+        ],
+        [
+          219,
+          325
+        ]
+      ],
+      "labelAt": [
+        207.5,
+        124
+      ]
+    },
+    {
+      "id": "r3",
+      "from": "v4",
+      "to": "v5",
+      "label": "reads",
+      "fromSide": "right",
+      "toSide": "left",
+      "via": [
+        [
+          411,
+          325
+        ],
+        [
+          411,
+          148
+        ],
+        [
+          434,
+          148
+        ],
+        [
+          434,
+          325
+        ]
+      ],
+      "labelAt": [
+        422.5,
+        148
+      ]
+    },
+    {
+      "id": "r4",
+      "from": "v3",
+      "to": "v5",
+      "label": "reads",
+      "fromSide": "right",
+      "toSide": "left",
+      "via": [
+        [
+          196,
+          553
+        ],
+        [
+          196,
+          172
+        ],
+        [
+          434,
+          172
+        ],
+        [
+          434,
+          325
+        ]
+      ],
+      "labelAt": [
+        315,
+        172
+      ]
+    },
+    {
+      "id": "r5",
+      "from": "v4",
+      "to": "v6",
+      "label": "reads",
+      "fromSide": "right",
+      "toSide": "left",
+      "via": [
+        [
+          411,
+          325
+        ],
+        [
+          411,
+          196
+        ],
+        [
+          649,
+          196
+        ],
+        [
+          649,
+          325
+        ]
+      ],
+      "labelAt": [
+        530,
+        196
+      ]
+    },
+    {
+      "id": "r6",
+      "from": "v5",
+      "to": "v6",
+      "label": "reads",
+      "fromSide": "right",
+      "toSide": "left",
+      "via": [
+        [
+          626,
+          325
+        ],
+        [
+          626,
+          220
+        ],
+        [
+          649,
+          220
+        ],
+        [
+          649,
+          325
+        ]
+      ],
+      "labelAt": [
+        637.5,
+        220
+      ]
+    },
+    {
+      "id": "r7",
+      "from": "v6",
+      "to": "v7",
+      "label": "reads",
+      "fromSide": "right",
+      "toSide": "left",
+      "via": [
+        [
+          841,
+          325
+        ],
+        [
+          841,
+          244
+        ],
+        [
+          864,
+          244
+        ],
+        [
+          864,
+          325
+        ]
+      ],
+      "labelAt": [
+        852.5,
+        244
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "name": "Invoice decision",
+  "main": "Main.xaml",
+  "targetFramework": "Windows"
+}

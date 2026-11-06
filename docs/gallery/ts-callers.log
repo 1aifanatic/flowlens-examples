@@ -1,0 +1,9 @@
+[examples repository]\docs\gallery\ts-callers\architecture.html
+Found 1 recorded source match for callers "authenticate"; showing 1. Results are bounded source evidence, not runtime behavior or a general semantic answer.
+src/service.ts:4: Call through authenticate references export "authenticate" from src/auth.ts.
+Diagram: [examples repository]\docs\gallery\ts-callers\architecture.html
+Report: [examples repository]\docs\gallery\ts-callers\report.html
+Evidence: [examples repository]\docs\gallery\ts-callers\evidence.json
+No LLM. Zero model tokens.
+Note: Git file listing unavailable; standard build/dependency folders excluded, .gitignore rules not applied.
+Note: Caller lookup matches exact recorded local call names, imported binding names, or call expressions. Aliases are described as bindings, not renamed implementation definitions. Evidence covers supported JavaScript/TypeScript and Python direct calls; dynamic dispatch, uncertain rebinding and many callback/member patterns are omitted. These are source call sites, not observed executions. No matches does not prove no callers.
